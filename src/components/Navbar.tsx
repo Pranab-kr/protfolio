@@ -31,7 +31,7 @@ const Navbar = () => {
         <motion.nav
           animate={{
             boxShadow: scrolled ? "var(--shadow-minimal)" : "none",
-            width: scrolled ? "75%" : "100%",
+            width: scrolled ? "90%" : "100%",
             marginLeft: "auto",
             marginRight: "auto",
             y: scrolled ? 15 : 0,

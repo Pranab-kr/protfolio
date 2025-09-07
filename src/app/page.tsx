@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import Projects from "@/components/projects/Projects";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
           I'm a Software engineer with a passion for building web applications.
           and I love working with the latest technologies.
         </p>
+        <Projects />
       </Container>
     </div>
   );
