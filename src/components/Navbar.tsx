@@ -43,7 +43,7 @@ const Navbar = () => {
           className="flex max-w-4xl items-center justify-between rounded-full bg-white px-4 py-2 pt-2 dark:bg-black"
         >
           <Image
-            className="h-18 w-18 rounded-full"
+            className="h-14 w-14 rounded-full"
             src="/onisun.jpg"
             height={100}
             width={100}

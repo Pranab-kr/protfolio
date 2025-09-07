@@ -12,6 +12,7 @@ const page = () => {
           I'm a Software engineer with a passion for building web applications.
           and I love working with the latest technologies.
         </p>
+
         <Projects />
       </Container>
     </div>
