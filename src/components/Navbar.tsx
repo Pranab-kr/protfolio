@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   useMotionValueEvent(scrollY, "change", (letest) => {
-    console.log(letest);
+    // console.log(letest);
     if (letest > 20) {
       setScrolled(true);
     } else {
@@ -40,16 +40,17 @@ const Navbar = () => {
             duration: 0.3,
             ease: "easeInOut",
           }}
-          className="flex max-w-4xl items-center justify-between rounded-full bg-white px-4 py-2 pt-2 dark:bg-black"
+          className="flex max-w-4xl items-center justify-between rounded-full bg-white/60 px-2 py-2 pt-2 backdrop-blur-md dark:bg-black/90"
         >
-          <Image
-            className="h-14 w-14 rounded-full"
-            src="/onisun.jpg"
-            height={100}
-            width={100}
-            alt="logo"
-          />
-
+          <Link href="/" className="cursor-pointer">
+            <Image
+              className="h-10 w-10 rounded-full transition-transform hover:scale-105"
+              src="/onisun.jpg"
+              height={100}
+              width={100}
+              alt="logo"
+            />
+          </Link>
           <div className="flex items-center">
             {navItems.map((item, idx) => (
               <Link

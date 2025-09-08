@@ -18,6 +18,7 @@
   --color-primary: var(--color-neutral-100);
   --color-secondary: var(--color-neutral-400);
 }
+
 @layer base {
   * {
     /* @apply border-border outline-ring/50; */
