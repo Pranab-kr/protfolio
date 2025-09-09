@@ -45,7 +45,7 @@ const Projects = () => {
         Here are a few of my recent projects.
       </p>
       <div className="grid grid-cols-1 gap-10 py-5 md:grid-cols-3">
-        {projects.map((project, idx) => (
+        {projects.slice(0, 3).map((project, idx) => (
           <motion.div
             initial={{
               opacity: 0,

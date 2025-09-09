@@ -1,11 +1,12 @@
 "use client";
-import ContactForm from "@/components/ContactForm";
+
+import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/container";
 import { motion } from "motion/react";
 const page = () => {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-[200vh] p-4 md:pt-20 md:pb-10">
+      <Container className="min-h-[110vh] p-8 md:pt-20 md:pb-10">
         <motion.h1
           initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -20,12 +21,12 @@ const page = () => {
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-secondary max-w-full pt-4 text-sm md:text-sm"
+          className="text-secondary text-md md:text-md max-w-lg pt-4 leading-normal"
         >
           I'm open to freelance offers. Reach out to me to inquire about
           potential projects.
         </motion.p>
-        {/* <ContactForm /> */}
+        <ContactForm />
       </Container>
     </div>
   );
