@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import BgPro from "../BgPro";
 
 const Projects = () => {
   const projects = [
@@ -39,8 +40,15 @@ const Projects = () => {
   const projectDescription: string = "I Love Building Web apps.";
 
   return (
-    <div className="py-2" id="Projects-Section">
-      <p className="text-primary md:text-md max-w-lg pt-4 text-sm">
+    <div
+      className="border-y border-neutral-200 px-6 py-8"
+      id="Projects-Section "
+    >
+      <p className="text-primary md:text-md relative w-fit py-1 text-sm">
+        <span>
+          <BgPro />
+        </span>
+
         {projectDescription.split(" ").map((word, index) => (
           <motion.span
             key={word + index}
@@ -48,7 +56,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{
               duration: 0.3,
-              delay: 0.25 + index * 0.05,
+              delay: 0.3 + index * 0.05,
               ease: "easeInOut",
             }}
             viewport={{ once: true }}
@@ -73,7 +81,7 @@ const Projects = () => {
             }}
             transition={{
               duration: 0.3,
-              delay: idx * 0.1,
+              delay: idx * 0.12,
               ease: "easeInOut",
             }}
             className="group"

@@ -25,7 +25,7 @@ const Knowledge = () => {
   const knowledgeTitle = "Sharing knowledge as I learn.";
 
   return (
-    <div className="pt-12">
+    <div className="border-b border-neutral-200 px-6 pt-12 pb-14">
       <p className="text-neutral-700">
         {knowledgeTitle.split(" ").map((word, index) => (
           <motion.span

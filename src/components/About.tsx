@@ -1,22 +1,47 @@
 "use client";
 import React from "react";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <div id="About" className="py-8">
-      <h2 className="text-primary text-xl font-bold tracking-tight md:text-2xl">
+    <div id="About" className="border-t border-neutral-200 px-6 pt-8 pb-10">
+      <motion.h2
+        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="text-primary text-xl font-bold tracking-tight md:text-2xl"
+      >
         About
-      </h2>
-      <p className="text-secondary max-w-3xl pt-4 text-sm md:text-base">
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-secondary max-w-3xl pt-4 text-sm md:text-base"
+      >
         I like exploring computer science concepts, especially their theoretical
         aspects. I'm currently learning Web 2.0 stuff.
-      </p>
+      </motion.p>
 
-      <h2 className="text-primary pt-8 text-xl font-bold tracking-tight md:text-2xl">
+      <motion.h2
+        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="text-primary pt-8 text-xl font-bold tracking-tight md:text-2xl"
+      >
         Education
-      </h2>
+      </motion.h2>
 
-      <div className="flex items-start gap-4 pt-4">
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="flex items-start gap-4 pt-4"
+      >
         <img
           src="https://www.nileshkrpahari.xyz/hit.png"
           alt="Haldia Institute of Technology Logo"
@@ -37,7 +62,7 @@ const About = () => {
             <span className="text-secondary text-sm">2024 - 2028</span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

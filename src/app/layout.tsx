@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Toaster, toast } from "sonner";
+import { Toaster } from "sonner";
 
 const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"] });
 export const metadata: Metadata = {

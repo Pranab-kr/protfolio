@@ -11,7 +11,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   const navItems = [
-    { title: "About", href: "/about" },
+    { title: "About", href: "#About" },
     { title: "Projects", href: "#Projects-Section" },
     { title: "Contact", href: "/contact" },
   ];
@@ -26,8 +26,8 @@ const Navbar = () => {
   });
 
   return (
-    <div className="fixed inset-x-0 top-0 z-50 flex justify-center">
-      <Container nav="isNav">
+    <div className="fixed inset-x-0 top-0 z-50">
+      <Container nav="isNav" className="px-12">
         <motion.nav
           animate={{
             boxShadow: scrolled ? "var(--shadow-minimal)" : "none",
@@ -40,7 +40,7 @@ const Navbar = () => {
             duration: 0.3,
             ease: "easeInOut",
           }}
-          className="flex max-w-4xl items-center justify-between rounded-full bg-white/60 px-2 py-2 pt-2 backdrop-blur-md dark:bg-black/90"
+          className="flex max-w-4xl items-center justify-between rounded-full bg-white/50 px-2 py-2 pt-2 backdrop-blur-md dark:bg-black/90"
         >
           <Link href="/" className="cursor-pointer">
             <Image
