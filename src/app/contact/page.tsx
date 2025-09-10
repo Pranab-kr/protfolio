@@ -9,7 +9,7 @@ const page = () => {
       <Container className="min-h-[110vh] p-8 md:pt-20 md:pb-10">
         <motion.h1
           initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
           viewport={{ once: true }}
           className="text-primary mt-4 text-2xl font-bold tracking-tighter drop-shadow-xs drop-shadow-neutral-200 md:text-4xl"
@@ -18,7 +18,7 @@ const page = () => {
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-secondary text-md md:text-md max-w-lg pt-4 leading-normal"

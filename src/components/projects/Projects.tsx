@@ -36,13 +36,27 @@ const Projects = () => {
     //     "A full-stack fitness tracking application with personalized workout plans,.",
     // },
   ];
+  const projectDescription: string = "I Love Building Web apps.";
 
   return (
-    <div className="py-2">
-      <p className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
-        I Love Building Web apps and Projects that can Impact millions of lives.{" "}
-        <br />
-        Here are a few of my recent projects.
+    <div className="py-2" id="Projects-Section">
+      <p className="text-primary md:text-md max-w-lg pt-4 text-sm">
+        {projectDescription.split(" ").map((word, index) => (
+          <motion.span
+            key={word + index}
+            initial={{ opacity: 0, filter: "blur(5px)", y: 5 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: 0.25 + index * 0.05,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true }}
+            className="mr-1 inline-block"
+          >
+            {word}
+          </motion.span>
+        ))}
       </p>
       <div className="grid grid-cols-1 gap-10 py-5 md:grid-cols-3">
         {projects.slice(0, 3).map((project, idx) => (
