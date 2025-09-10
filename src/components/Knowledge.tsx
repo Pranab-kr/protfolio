@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "motion/react";
+import BgPro from "./BgPro";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const Knowledge = () => {
   const articles = [
@@ -26,32 +28,28 @@ const Knowledge = () => {
 
   return (
     <div className="border-b border-neutral-200 px-6 pt-12 pb-14">
-      <p className="text-neutral-700">
-        {knowledgeTitle.split(" ").map((word, index) => (
-          <motion.span
-            key={word + index}
-            initial={{ opacity: 0, filter: "blur(5px)", y: 10 }}
-            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.3 + index * 0.05,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }}
-            className="mr-1 inline-block"
-          >
-            {word}
-          </motion.span>
-        ))}
-      </p>
+      <div className="relative w-fit py-1 text-neutral-700">
+        <span>
+          <BgPro />
+        </span>
+        <TextAnimate
+          animation="blurInUp"
+          once={true}
+          by="character"
+          delay={0.8}
+        >
+          {knowledgeTitle}
+        </TextAnimate>
+      </div>
 
-      <>
+      <div>
         {articles.map((article, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ delay: idx * 0.1, duration: 0.3 }}
+            transition={{ delay: 0.5 + idx * 0.1, duration: 0.3 }}
+            viewport={{ once: true }}
             className="pt-10"
           >
             <div className="flex justify-between">
@@ -65,7 +63,7 @@ const Knowledge = () => {
             </p>
           </motion.div>
         ))}
-      </>
+      </div>
     </div>
   );
 };

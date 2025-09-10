@@ -16,6 +16,25 @@ const Navbar = () => {
     { title: "Contact", href: "/contact" },
   ];
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const navbarHeight = 100; // Approximate navbar height with margin
+        const targetPosition = targetElement.offsetTop - navbarHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   useMotionValueEvent(scrollY, "change", (letest) => {
     // console.log(letest);
     if (letest > 20) {
@@ -56,6 +75,7 @@ const Navbar = () => {
               <Link
                 key={idx}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="relative px-4 py-1 text-sm"
                 onMouseEnter={() => setHovered(idx)}
                 onMouseLeave={() => setHovered(null)}

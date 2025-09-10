@@ -5,6 +5,8 @@ import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import BgPro from "../BgPro";
+import SvgHover from "./SvgHover ";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const Projects = () => {
   const projects = [
@@ -12,15 +14,14 @@ const Projects = () => {
       title: "Project One",
       src: "/onisun.jpg",
       href: "#",
-      description:
-        "A modern e-commerce platform built with React and Node.js, featuring ",
+      description: "A modern e-commerce platform built with React and Node.js",
     },
     {
       title: "Project Two",
       src: "/onisun.jpg",
       href: "#",
       description:
-        "An AI-powered task management app that helps teams collaborate efficiently ",
+        "An AI-powered task management app that helps teams collaborate.",
     },
     {
       title: "Project Three",
@@ -42,31 +43,24 @@ const Projects = () => {
   return (
     <div
       className="border-y border-neutral-200 px-6 py-8"
-      id="Projects-Section "
+      id="Projects-Section"
     >
-      <p className="text-primary md:text-md relative w-fit py-1 text-sm">
+      <div className="text-primary md:text-md relative w-fit py-1 text-sm">
         <span>
           <BgPro />
         </span>
 
-        {projectDescription.split(" ").map((word, index) => (
-          <motion.span
-            key={word + index}
-            initial={{ opacity: 0, filter: "blur(5px)", y: 5 }}
-            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.3 + index * 0.05,
-              ease: "easeInOut",
-            }}
-            viewport={{ once: true }}
-            className="mr-1 inline-block"
-          >
-            {word}
-          </motion.span>
-        ))}
-      </p>
-      <div className="grid grid-cols-1 gap-10 py-5 md:grid-cols-3">
+        <TextAnimate
+          animation="blurInUp"
+          once={true}
+          by="character"
+          delay={0.4}
+        >
+          {projectDescription}
+        </TextAnimate>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 py-5 md:grid-cols-3">
         {projects.slice(0, 3).map((project, idx) => (
           <motion.div
             initial={{
@@ -84,7 +78,10 @@ const Projects = () => {
               delay: idx * 0.12,
               ease: "easeInOut",
             }}
-            className="group"
+            whileHover={{
+              transition: { duration: 0.3, ease: "easeInOut" },
+            }}
+            className="group hover:shadow-minimal rounded-3xl transition-shadow duration-300"
             key={project.title}
           >
             <Link href={project.href}>
@@ -93,14 +90,17 @@ const Projects = () => {
                 alt={project.title}
                 height={500}
                 width={500}
-                className="aspect-square rounded-xl object-cover group-hover:scale-[1.02]"
+                className="aspect-square rounded-xl object-cover transition-transform duration-300 ease-in-out group-hover:scale-[1.02]"
               />
-              <h2 className="z-20 pt-6 font-medium tracking-tight text-neutral-500 dark:text-neutral-300">
-                {project.title}
-              </h2>
-              <p className="max-w-xs pt-3 text-sm text-neutral-500 dark:text-neutral-400">
-                {project.description}
-              </p>
+              <div className="pb-4 transition-all duration-300 ease-in-out group-hover:pl-[14px]">
+                <h2 className="z-20 pt-6 font-medium tracking-tight text-neutral-500 dark:text-neutral-300">
+                  {project.title}
+                </h2>
+                <p className="max-w-sm pt-3 text-xs text-neutral-500 dark:text-neutral-400">
+                  {project.description}
+                </p>
+                <SvgHover />
+              </div>
             </Link>
           </motion.div>
         ))}

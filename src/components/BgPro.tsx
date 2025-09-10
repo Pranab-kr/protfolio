@@ -7,7 +7,7 @@ const BgPro = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.3, delay: 1, ease: "easeInOut" }}
+        transition={{ duration: 0.3, delay: 1.3, ease: "easeInOut" }}
         className="absolute inset-0 h-full w-full scale-[1.02] bg-neutral-100"
       >
         <div className="absolute -top-px -left-px h-1 w-1 rounded-full bg-neutral-200"></div>
