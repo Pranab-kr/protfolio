@@ -12,20 +12,20 @@ const Projects = () => {
   const projects = [
     {
       title: "Project One",
-      src: "/onisun.jpg",
+      src: "/keyBoard.png",
       href: "#",
       description: "A modern e-commerce platform built with React and Node.js",
     },
     {
       title: "Project Two",
-      src: "/onisun.jpg",
+      src: "/keyBoard.png",
       href: "#",
       description:
         "An AI-powered task management app that helps teams collaborate.",
     },
     {
       title: "Project Three",
-      src: "/onisun.jpg",
+      src: "/keyBoard.png",
       href: "#",
       description:
         "A responsive social media dashboard with analytics, post scheduling, and ",
