@@ -11,7 +11,7 @@ const Hero = () => {
         viewport={{ once: true }}
         className="text-primary mt-4 text-2xl font-bold tracking-tighter drop-shadow-xs drop-shadow-neutral-200 md:text-4xl"
       >
-        Hi, I'm Pranab
+        Hi, I&apos;m Pranab 🤘
       </motion.h1>
 
       <motion.p
@@ -21,7 +21,8 @@ const Hero = () => {
         viewport={{ once: true }}
         className="text-secondary max-w-full pt-4 text-sm md:text-sm"
       >
-        I'm a Software engineer with a passion for building web applications.
+        I&apos;m a Software engineer with a passion for building web
+        applications.
         {/* and I love working with the latest technologies. */}
       </motion.p>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 
 type UserData = {
   name: string;

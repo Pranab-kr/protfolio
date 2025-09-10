@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -22,7 +23,7 @@ const About = () => {
         className="text-secondary max-w-3xl pt-4 text-sm md:text-base"
       >
         I like exploring computer science concepts, especially their theoretical
-        aspects. I'm currently learning Web 2.0 stuff.
+        aspects. I&apos;m currently learning Web 2.0 stuff.
       </motion.p>
 
       <motion.h2
@@ -42,12 +43,12 @@ const About = () => {
         viewport={{ once: true }}
         className="flex items-start gap-4 pt-4"
       >
-        <img
-          src="https://www.nileshkrpahari.xyz/hit.png"
+        <Image
+          src="/onisun.jpg"
           alt="Haldia Institute of Technology Logo"
           width={60}
           height={60}
-          className="rounded-full"
+          className="aspect-square rounded-full object-cover"
         />
         <div className="flex-1">
           <div className="flex items-start justify-between">

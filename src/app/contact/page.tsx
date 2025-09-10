@@ -25,7 +25,7 @@ const page = () => {
           viewport={{ once: true }}
           className="text-secondary text-md md:text-md max-w-lg px-6 pt-4 leading-normal"
         >
-          I'm open to freelance offers. Reach out to me to inquire about
+          I&apos;m open to freelance offers. Reach out to me to inquire about
           potential projects.
         </motion.p>
         <ContactForm />

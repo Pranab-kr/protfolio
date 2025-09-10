@@ -10,7 +10,7 @@ const ContactSection = () => {
       <h1 className="text-primary text-5xl font-bold">Get in Touch</h1>
       <p className="text-secondary max-w-lg text-center text-lg">
         Want to chat? Just shoot me a dm with a direct question on twitter and
-        I'll respond whenever I can.
+        I&apos;ll respond whenever I can.
       </p>
     </div>
   );
