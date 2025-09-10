@@ -7,19 +7,19 @@ const Knowledge = () => {
   const articles = [
     {
       title: "Advanced CSS Techniques for Modern Web Development",
-      date: "Feb 15, 2024",
+      date: "Feb 15, 2025",
       description:
         "Explore advanced CSS techniques including CSS Grid, Flexbox, Custom Properties, and modern layout patterns that willtak...",
     },
     {
       title: "Mastering TypeScript for Scalable Applications",
-      date: "Mar 10, 2024",
+      date: "Mar 10, 2025",
       description:
         "Dive into TypeScript's powerful features to build scalable and maintainable applications with confidence.",
     },
     {
       title: "Building Accessible Web Applications",
-      date: "Apr 5, 2024",
+      date: "Apr 5, 2025",
       description:
         "Learn how to create inclusive web applications by following accessibility best practices and guidelines.",
     },
@@ -36,7 +36,7 @@ const Knowledge = () => {
           animation="blurInUp"
           once={true}
           by="character"
-          delay={0.8}
+          delay={0.6}
         >
           {knowledgeTitle}
         </TextAnimate>
