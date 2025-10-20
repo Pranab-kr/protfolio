@@ -17,7 +17,7 @@ const Hero = () => {
       <motion.p
         initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         className="text-secondary max-w-full pt-4 text-sm md:text-sm"
       >

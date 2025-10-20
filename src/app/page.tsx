@@ -29,7 +29,7 @@ const page = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: sectionDelays.hero }}
+          transition={{ duration: 0.3, delay: sectionDelays.hero }}
         >
           <Hero />
         </motion.div>
@@ -37,8 +37,8 @@ const page = () => {
         {/* About - loads after Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: sectionDelays.about }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: sectionDelays.about }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <About />
@@ -47,8 +47,8 @@ const page = () => {
         {/* Projects - loads after About */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: sectionDelays.projects }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: sectionDelays.projects }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <Projects />
@@ -57,8 +57,8 @@ const page = () => {
         {/* Knowledge - loads after Projects */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: sectionDelays.knowledge }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: sectionDelays.knowledge }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <Knowledge />
@@ -67,8 +67,8 @@ const page = () => {
         {/* Contact - loads after Knowledge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: sectionDelays.contact }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: sectionDelays.contact }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <ContactSection />
@@ -77,8 +77,8 @@ const page = () => {
         {/* Footer - loads last */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: sectionDelays.footer }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: sectionDelays.footer }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <Footer />

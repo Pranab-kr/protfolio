@@ -68,7 +68,7 @@ const Projects = () => {
               filter: "blur(10px)",
               y: 20,
             }}
-            animate={{
+            whileInView={{
               opacity: 1,
               filter: "blur(0px)",
               y: 0,
@@ -78,6 +78,7 @@ const Projects = () => {
               delay: idx * 0.15,
               ease: "easeOut",
             }}
+            viewport={{ once: true }}
             whileHover={{
               transition: { duration: 0.3, ease: "easeInOut" },
             }}
