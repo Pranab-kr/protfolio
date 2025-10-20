@@ -75,7 +75,7 @@ const Projects = () => {
             }}
             transition={{
               duration: 0.3,
-              delay: idx * 0.15,
+              delay: idx * 0.3,
               ease: "easeOut",
             }}
             viewport={{ once: true }}

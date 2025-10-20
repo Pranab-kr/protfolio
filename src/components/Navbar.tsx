@@ -59,7 +59,7 @@ const Navbar = () => {
             duration: 0.3,
             ease: "easeInOut",
           }}
-          className="flex max-w-4xl items-center justify-between rounded-full bg-white/50 px-2 py-2 pt-2 backdrop-blur-md dark:bg-black/90"
+          className="flex max-w-4xl items-center justify-between rounded-full bg-white/40 px-2 py-2 pt-2 backdrop-blur-md dark:bg-black/90"
         >
           <Link href="/" className="cursor-pointer">
             <Image
