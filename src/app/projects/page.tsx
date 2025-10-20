@@ -5,7 +5,6 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import BgPro from "@/components/BgPro";
 import SvgHover from "@/components/projects/SvgHover ";
 import { TextAnimate } from "@/components/magicui/text-animate";
 
@@ -61,7 +60,7 @@ const page = () => {
         <SideScale />
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           transition={{
             duration: 0.5,
             ease: "easeOut",
@@ -98,7 +97,7 @@ const page = () => {
                   filter: "blur(10px)",
                   y: 20,
                 }}
-                whileInView={{
+                animate={{
                   opacity: 1,
                   filter: "blur(0px)",
                   y: 0,
