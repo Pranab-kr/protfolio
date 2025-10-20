@@ -35,8 +35,9 @@ const Knowledge = () => {
         <TextAnimate
           animation="blurInUp"
           once={true}
-          by="character"
-          delay={0.6}
+          by="word"
+          delay={0.3}
+          duration={0.2}
         >
           {knowledgeTitle}
         </TextAnimate>

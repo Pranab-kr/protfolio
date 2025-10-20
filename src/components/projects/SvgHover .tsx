@@ -27,24 +27,24 @@ const SvgHover = () => {
         <motion.div
           key={tech.name}
           initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.3,
-            delay: 0.5 + index * 0.1,
+            delay: index * 0.2,
             ease: "easeOut",
           }}
-          viewport={{ once: true }}
+          // viewport={{ once: true }}
           className={`group relative flex h-8 cursor-pointer items-center overflow-hidden rounded-full border border-neutral-200 bg-white shadow-sm transition-all duration-300 ease-out hover:pr-3 ${tech.color} `}
           style={{
             marginLeft: index > 0 ? "-6px" : "0px",
             zIndex: index + 1,
-            width: "32px", // Default width (w-8)
+            width: "32px",
           }}
           onMouseEnter={(e) => {
             const element = e.currentTarget;
             const textWidth =
               element.querySelector(".tech-name")?.scrollWidth || 0;
-            element.style.width = `${32 + textWidth + 20}px`; // icon width + text width + padding
+            element.style.width = `${32 + textWidth + 20}px`;
             element.style.zIndex = "10";
           }}
           onMouseLeave={(e) => {

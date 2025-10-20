@@ -146,15 +146,15 @@ const defaultItemAnimationVariants: Record<
   blurInUp: {
     container: defaultContainerVariants,
     item: {
-      hidden: { opacity: 0, filter: "blur(10px)", y: 20 },
+      hidden: { opacity: 0, filter: "blur(10px)", y: 10 },
       show: {
         opacity: 1,
         filter: "blur(0px)",
         y: 0,
         transition: {
-          y: { duration: 0.3 },
-          opacity: { duration: 0.4 },
-          filter: { duration: 0.3 },
+          y: { duration: 0.3, ease: "easeOut" },
+          opacity: { duration: 0.4, ease: "easeOut" },
+          filter: { duration: 0.3, ease: "easeOut" },
         },
       },
       exit: {

@@ -44,7 +44,7 @@ const About = () => {
         className="flex items-start gap-4 pt-4"
       >
         <Image
-          src="/onisun.jpg"
+          src="/hit.png"
           alt="Haldia Institute of Technology Logo"
           width={60}
           height={60}

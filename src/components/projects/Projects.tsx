@@ -30,18 +30,17 @@ const Projects = () => {
       description:
         "A responsive social media dashboard with analytics, post scheduling, and ",
     },
-    // {
-    //   title: "Project four",
-    //   src: "/onisun.jpg",
-    //   href: "#",
-    //   description:
-    //     "A full-stack fitness tracking application with personalized workout plans,.",
-    // },
   ];
   const projectDescription: string = "I Love Building Web apps.";
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+      }}
       className="border-y border-neutral-200 px-6 py-8"
       id="Projects-Section"
     >
@@ -53,20 +52,21 @@ const Projects = () => {
         <TextAnimate
           animation="blurInUp"
           once={true}
-          by="character"
-          delay={0.4}
+          by="word"
+          duration={0.2}
+          delay={0.3}
         >
           {projectDescription}
         </TextAnimate>
       </div>
 
       <div className="grid grid-cols-1 gap-6 py-5 md:grid-cols-3">
-        {projects.slice(0, 3).map((project, idx) => (
+        {projects.map((project, idx) => (
           <motion.div
             initial={{
               opacity: 0,
               filter: "blur(10px)",
-              y: 10,
+              y: 20,
             }}
             animate={{
               opacity: 1,
@@ -75,8 +75,8 @@ const Projects = () => {
             }}
             transition={{
               duration: 0.3,
-              delay: idx * 0.12,
-              ease: "easeInOut",
+              delay: idx * 0.15,
+              ease: "easeOut",
             }}
             whileHover={{
               transition: { duration: 0.3, ease: "easeInOut" },
@@ -105,7 +105,7 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
