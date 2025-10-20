@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "./container";
 import Image from "next/image";
 import { useState } from "react";
+import ThemeToggleBtn from "./ui/ThemeToggleBtn";
 
 const Navbar = () => {
   const [hoverred, setHovered] = useState<number | null>(null);
@@ -70,25 +71,32 @@ const Navbar = () => {
               alt="logo"
             />
           </Link>
-          <div className="flex items-center">
-            {navItems.map((item, idx) => (
-              <Link
-                key={idx}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="relative px-4 py-1 text-sm"
-                onMouseEnter={() => setHovered(idx)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {hoverred === idx && (
-                  <motion.span
-                    layoutId="hovered-span"
-                    className="dark:bg-n absolute inset-0 h-full w-full rounded-md bg-neutral-100 dark:bg-neutral-800"
-                  ></motion.span>
-                )}
-                <span className="relative z-10">{item.title}</span>
-              </Link>
-            ))}
+
+          <div className="flex items-center gap-2">
+            {/* Navigation Links */}
+            <div className="flex items-center">
+              {navItems.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="relative px-4 py-1 text-sm"
+                  onMouseEnter={() => setHovered(idx)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  {hoverred === idx && (
+                    <motion.span
+                      layoutId="hovered-span"
+                      className="absolute inset-0 h-full w-full rounded-md bg-neutral-100 dark:bg-neutral-800"
+                    ></motion.span>
+                  )}
+                  <span className="relative z-10">{item.title}</span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Theme Toggle Button */}
+            <ThemeToggleBtn />
           </div>
         </motion.nav>
       </Container>
