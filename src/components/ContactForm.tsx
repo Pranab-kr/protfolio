@@ -44,7 +44,7 @@ export const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="m-auto flex w-full max-w-lg flex-col justify-center gap-4 py-16"
+      className="m-auto flex w-full max-w-lg flex-col justify-center gap-4 px-4 py-16 md:px-0"
     >
       <div className="flex flex-col gap-2">
         <label

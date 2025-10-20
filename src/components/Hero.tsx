@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   return (
-    <div className="px-6 pb-8">
+    <div className="px-4 pb-8 md:px-6">
       <motion.h1
         initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}

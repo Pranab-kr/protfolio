@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="mt-16 flex justify-between border-t border-neutral-200 px-6 pt-3">
+    <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-neutral-200 px-4 pt-3 md:flex-row md:px-6">
       <p className="text-xs text-neutral-500">Build By Pranab kr</p>
       <div className="flex items-center justify-center gap-4">
         <Link href="https://github.com/Pranab-kr" target="_blank">

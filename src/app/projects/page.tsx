@@ -56,7 +56,7 @@ const page = () => {
 
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-[110vh] p-8 md:pt-20 md:pb-10">
+      <Container className="min-h-[110vh] p-4 pt-16 pb-10 md:p-8 md:pt-20">
         <SideScale />
         <motion.div
           initial={{ opacity: 0 }}
@@ -89,7 +89,7 @@ const page = () => {
             </TextAnimate>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 py-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 py-5 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
             {projects.map((project, idx) => (
               <motion.div
                 initial={{

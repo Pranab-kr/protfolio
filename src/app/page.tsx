@@ -22,7 +22,7 @@ const page = () => {
 
   return (
     <div className="flex min-h-screen items-start justify-center">
-      <Container className="relative min-h-screen px-8 md:pt-20 md:pb-10">
+      <Container className="relative min-h-screen px-4 pt-16 pb-10 md:px-8 md:pt-20">
         <SideScale />
 
         {/* Hero - loads first */}

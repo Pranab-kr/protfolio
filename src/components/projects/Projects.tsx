@@ -41,7 +41,7 @@ const Projects = () => {
         duration: 0.5,
         ease: "easeOut",
       }}
-      className="border-y border-neutral-200 px-6 py-8"
+      className="border-y border-neutral-200 px-4 py-8 md:px-6"
       id="Projects-Section"
     >
       <div className="text-primary md:text-md relative w-fit py-1 text-sm">
@@ -60,7 +60,7 @@ const Projects = () => {
         </TextAnimate>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 py-5 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 py-5 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
         {projects.map((project, idx) => (
           <motion.div
             initial={{
