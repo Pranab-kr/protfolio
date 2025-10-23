@@ -25,7 +25,6 @@ const page = () => {
       <Container className="relative min-h-screen px-4 pt-16 pb-10 md:px-8 md:pt-20">
         <SideScale />
 
-        {/* Hero - loads first */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,7 +33,6 @@ const page = () => {
           <Hero />
         </motion.div>
 
-        {/* About - loads after Hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +42,6 @@ const page = () => {
           <About />
         </motion.div>
 
-        {/* Projects - loads after About */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,7 +51,6 @@ const page = () => {
           <Projects />
         </motion.div>
 
-        {/* Knowledge - loads after Projects */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +60,6 @@ const page = () => {
           <Knowledge />
         </motion.div>
 
-        {/* Contact - loads after Knowledge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,7 +69,6 @@ const page = () => {
           <ContactSection />
         </motion.div>
 
-        {/* Footer - loads last */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

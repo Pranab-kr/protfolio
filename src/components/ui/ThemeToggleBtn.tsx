@@ -4,24 +4,28 @@ import { motion } from "motion/react";
 
 const ThemeToggleBtn = () => {
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Initialize theme from localStorage or system preference
   useEffect(() => {
+    setMounted(true);
+
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
 
-    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-      setIsDark(true);
+    const shouldBeDark =
+      savedTheme === "dark" || (!savedTheme && systemPrefersDark);
+    setIsDark(shouldBeDark);
+
+    // Apply theme to document
+    if (shouldBeDark) {
       document.documentElement.classList.add("dark");
     } else {
-      setIsDark(false);
       document.documentElement.classList.remove("dark");
     }
   }, []);
 
-  // Toggle theme function
   const toggleTheme = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
@@ -34,6 +38,12 @@ const ThemeToggleBtn = () => {
       localStorage.setItem("theme", "light");
     }
   };
+
+  if (!mounted) {
+    return (
+      <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-transparent" />
+    );
+  }
 
   return (
     <motion.button

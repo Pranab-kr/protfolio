@@ -76,9 +76,7 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden items-center gap-2 md:flex">
-              {/* Navigation Links */}
               <div className="flex items-center">
                 {navItems.map((item, idx) => (
                   <Link
@@ -100,11 +98,9 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Desktop Theme Toggle Button */}
               <ThemeToggleBtn />
             </div>
 
-            {/* Mobile Hamburger Menu */}
             <HamburgerMenu
               isOpen={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

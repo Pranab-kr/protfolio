@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-gray-950 dark:bg-neutral-700 dark:[--pattern-fg:var(--color-white)]/10`}
+        className={`${inter.className} bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-700 dark:[--pattern-fg:var(--color-white)]/10`}
       >
         <Toaster position="top-center" />
         <Navbar />
