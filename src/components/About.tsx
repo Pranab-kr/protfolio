@@ -5,11 +5,8 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div
-      id="About"
-      className="border-t border-neutral-200 px-4 pt-8 pb-10 md:px-6"
-    >
-      <motion.h2
+    <div id="About" className="border-border border-t px-4 pt-8 pb-10 md:px-6">
+      {/* <motion.h2
         initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
@@ -27,14 +24,14 @@ const About = () => {
       >
         I like exploring computer science concepts, especially their theoretical
         aspects. I&apos;m currently learning Web 2.0 stuff.
-      </motion.p>
+      </motion.p> */}
 
       <motion.h2
         initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
-        className="text-primary pt-8 text-xl font-bold tracking-tight md:text-2xl"
+        className="text-primary text-xl font-bold tracking-tight md:text-2xl"
       >
         Education
       </motion.h2>

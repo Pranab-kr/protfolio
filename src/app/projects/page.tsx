@@ -1,144 +1,304 @@
 "use client";
-import { Container } from "@/components/container";
-import SideScale from "@/components/SideScale";
-import Image from "next/image";
-import React from "react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import SvgHover from "@/components/projects/SvgHover ";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
-const page = () => {
-  const projects = [
-    {
-      title: "Project One",
-      src: "/keyBoard.png",
-      href: "#",
-      description: "A modern e-commerce platform built with React and Node.js",
-    },
-    {
-      title: "Project Two",
-      src: "/keyBoard.png",
-      href: "#",
-      description:
-        "An AI-powered task management app that helps teams collaborate.",
-    },
-    {
-      title: "Project Three",
-      src: "/keyBoard.png",
-      href: "#",
-      description:
-        "A responsive social media dashboard with analytics, post scheduling, and ",
-    },
-    {
-      title: "Project One",
-      src: "/keyBoard.png",
-      href: "#",
-      description: "A modern e-commerce platform built with React and Node.js",
-    },
-    {
-      title: "Project Two",
-      src: "/keyBoard.png",
-      href: "#",
-      description:
-        "An AI-powered task management app that helps teams collaborate.",
-    },
-    {
-      title: "Project Three",
-      src: "/keyBoard.png",
-      href: "#",
-      description:
-        "A responsive social media dashboard with analytics, post scheduling, and ",
-    },
-  ];
-  const projectDescription: string =
-    "I Love Building Web apps. Here's a showcase of my best works.";
+import { Container } from "@/components/container";
+import React, { useState, useMemo } from "react";
+import { motion } from "motion/react";
+import { ProjectCard, Project } from "@/components/projects/ProjectCard";
+import { Separator } from "@/components/ui/separator";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiNodedotjs,
+  SiMongodb,
+  SiFramer,
+  SiPrisma,
+  SiPostgresql,
+} from "react-icons/si";
+
+const projects: Project[] = [
+  {
+    title: "E-Commerce Platform",
+    description:
+      "A modern e-commerce platform built with React and Node.js featuring real-time updates and seamless checkout experience.",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    slug: "ecommerce-platform",
+    technologies: [
+      { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs className="size-full text-[#339933]" />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb className="size-full text-[#47A248]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+    ],
+    isWorking: true,
+  },
+  {
+    title: "Task Management App",
+    description:
+      "An AI-powered task management app that helps teams collaborate efficiently with smart suggestions and analytics.",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    slug: "task-management",
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-foreground size-full" />,
+      },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="size-full text-[#3178C6]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer className="size-full text-[#0055FF]" />,
+      },
+    ],
+    isWorking: true,
+  },
+  {
+    title: "Social Dashboard",
+    description:
+      "A responsive social media dashboard with analytics, post scheduling, and engagement tracking features.",
+    image: "/keyBoard.png",
+    link: "#",
+    slug: "social-dashboard",
+    technologies: [
+      { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="size-full text-[#3178C6]" />,
+      },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs className="size-full text-[#339933]" />,
+      },
+    ],
+    isWorking: false,
+  },
+  {
+    title: "Portfolio Template",
+    description:
+      "Portfolio website template with beautiful animations and dark mode support built with Next.js.",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    slug: "portfolio-template",
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-foreground size-full" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer className="size-full text-[#0055FF]" />,
+      },
+    ],
+    isWorking: true,
+  },
+  {
+    title: "Blog Platform",
+    description:
+      "A full-stack blog platform with markdown support, SEO optimization, and a powerful admin dashboard.",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-foreground size-full" />,
+      },
+      {
+        name: "Prisma",
+        icon: <SiPrisma className="text-foreground size-full" />,
+      },
+      {
+        name: "PostgreSQL",
+        icon: <SiPostgresql className="size-full text-[#4169E1]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+    ],
+    isWorking: true,
+  },
+  {
+    title: "Chat Application",
+    description:
+      "Real-time chat application with end-to-end encryption, file sharing, and video call capabilities.",
+    image: "/keyBoard.png",
+    link: "#",
+    technologies: [
+      { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs className="size-full text-[#339933]" />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb className="size-full text-[#47A248]" />,
+      },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="size-full text-[#3178C6]" />,
+      },
+    ],
+    isWorking: false,
+  },
+];
+
+type FilterType = "all" | "working" | "building";
+
+const ProjectsPage = () => {
+  const [filter, setFilter] = useState<FilterType>("all");
+
+  const workingCount = useMemo(
+    () => projects.filter((p) => p.isWorking !== false).length,
+    []
+  );
+  const buildingCount = useMemo(
+    () => projects.filter((p) => p.isWorking === false).length,
+    []
+  );
+
+  const filteredProjects = useMemo(() => {
+    if (filter === "working") {
+      return projects.filter((p) => p.isWorking !== false);
+    }
+    if (filter === "building") {
+      return projects.filter((p) => p.isWorking === false);
+    }
+    return projects;
+  }, [filter]);
 
   return (
-    <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-[110vh] p-4 pt-16 pb-10 md:p-8 md:pt-20">
-        <SideScale />
+    <div className="flex min-h-screen items-start justify-center">
+      <Container className="min-h-screen w-full max-w-4xl px-4 pt-16 pb-10 md:px-8 md:pt-24">
+        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            ease: "easeOut",
-          }}
-          className="border-y border-neutral-200 px-6 py-8"
-          id="Projects-Section"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-8 text-center"
         >
-          <motion.h1
-            initial={{ opacity: 0, filter: "blur(20px)", y: 10 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-primary mt-4 pb-4 text-2xl font-bold tracking-tighter drop-shadow-xs drop-shadow-neutral-200 md:text-4xl"
-          >
-            My Projects
-          </motion.h1>
-          <div className="text-primary md:text-md relative w-fit max-w-xs py-1 text-sm">
-            <TextAnimate
-              animation="blurInUp"
-              once={true}
-              by="word"
-              duration={0.2}
-              delay={0.2}
-            >
-              {projectDescription}
-            </TextAnimate>
-          </div>
+          <h1 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
+            Projects
+          </h1>
+          <p className="text-muted-foreground text-base md:text-lg">
+            My projects and work across different technologies and domains.
+          </p>
+        </motion.div>
 
-          <div className="grid grid-cols-1 gap-4 py-5 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-            {projects.map((project, idx) => (
+        <Separator className="mb-8" />
+
+        {/* Filter Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="mb-8"
+        >
+          <h2 className="text-foreground mb-4 px-6 text-lg font-semibold">
+            Filter by Status
+          </h2>
+          <div className="flex flex-wrap gap-3 px-4">
+            <button
+              onClick={() =>
+                setFilter(filter === "working" ? "all" : "working")
+              }
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                filter === "working"
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border text-foreground hover:bg-muted"
+              }`}
+            >
+              Working ({workingCount})
+            </button>
+            <button
+              onClick={() =>
+                setFilter(filter === "building" ? "all" : "building")
+              }
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                filter === "building"
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border text-foreground hover:bg-muted"
+              }`}
+            >
+              Building ({buildingCount})
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Projects Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
+          <h2 className="text-foreground mb-6 px-6 text-xl font-bold">
+            {filter === "all"
+              ? "All Projects"
+              : filter === "working"
+                ? "Working Projects"
+                : "Building Projects"}{" "}
+            <span className="text-muted-foreground text-base font-normal">
+              ({filteredProjects.length} projects)
+            </span>
+          </h2>
+
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 gap-6 px-6 md:grid-cols-2">
+            {filteredProjects.map((project, idx) => (
               <motion.div
+                key={project.title + idx}
                 initial={{
                   opacity: 0,
-                  filter: "blur(10px)",
                   y: 20,
                 }}
                 animate={{
                   opacity: 1,
-                  filter: "blur(0px)",
                   y: 0,
                 }}
                 transition={{
                   duration: 0.3,
-                  delay: idx * 0.15,
+                  delay: idx * 0.05,
                   ease: "easeOut",
                 }}
-                viewport={{ once: true }}
-                whileHover={{
-                  transition: { duration: 0.3, ease: "easeInOut" },
-                }}
-                className="group hover:shadow-minimal rounded-3xl transition-shadow duration-300"
-                key={project.title}
               >
-                <Link href={project.href}>
-                  <Image
-                    src={project.src}
-                    alt={project.title}
-                    height={500}
-                    width={500}
-                    className="aspect-square rounded-xl object-cover transition-transform duration-300 ease-in-out group-hover:scale-[1.02]"
-                  />
-                  <div className="pb-4 transition-all duration-300 ease-in-out group-hover:pl-[14px]">
-                    <h2 className="z-20 pt-6 font-medium tracking-tight text-neutral-500 dark:text-neutral-300">
-                      {project.title}
-                    </h2>
-                    <p className="max-w-sm pt-3 text-xs text-neutral-500 dark:text-neutral-400">
-                      {project.description}
-                    </p>
-                    <SvgHover />
-                  </div>
-                </Link>
+                <ProjectCard project={project} />
               </motion.div>
             ))}
           </div>
+
+          {filteredProjects.length === 0 && (
+            <div className="text-muted-foreground py-12 text-center">
+              No projects found with the selected filter.
+            </div>
+          )}
         </motion.div>
       </Container>
     </div>
   );
 };
 
-export default page;
+export default ProjectsPage;

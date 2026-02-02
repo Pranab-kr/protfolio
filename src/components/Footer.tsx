@@ -5,18 +5,26 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-neutral-200 px-4 pt-3 md:flex-row md:px-6">
-      <p className="text-xs text-neutral-500">Build By Pranab kr</p>
-      <div className="flex items-center justify-center gap-4">
+    <div className="px-4 pt-8 pb-16 md:px-6">
+      {/* Social Links */}
+      <div className="flex items-center justify-center gap-4 pb-8">
         <Link href="https://github.com/Pranab-kr" target="_blank">
-          <LuGithub className="size-5 text-neutral-500 hover:text-neutral-700" />
+          <LuGithub className="text-muted-foreground hover:text-foreground size-5 transition-colors" />
         </Link>
         <Link href="#" target="_blank">
-          <CiLinkedin className="size-5 text-neutral-500 hover:text-neutral-700" />
+          <CiLinkedin className="text-muted-foreground hover:text-foreground size-5 transition-colors" />
         </Link>
         <Link href="#" target="_blank">
-          <FaXTwitter className="size-5 text-neutral-500 hover:text-neutral-700" />
+          <FaXTwitter className="text-muted-foreground hover:text-foreground size-5 transition-colors" />
         </Link>
+      </div>
+
+      {/* Footer Text */}
+      <div className="flex flex-col items-center justify-center">
+        <p className="text-secondary text-center text-sm">
+          Design & Developed by <b>Pranab kr</b> <br /> &copy;{" "}
+          {new Date().getFullYear()}. All rights reserved.
+        </p>
       </div>
     </div>
   );

@@ -2,13 +2,11 @@
 
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/container";
-import SideScale from "@/components/SideScale";
 import { motion } from "motion/react";
 const page = () => {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="min-h-[110vh] p-4 pt-16 pb-10 md:p-8 md:pt-20">
-        <SideScale />
+      <Container className="min-h-[110vh] p-4 px-28 pt-16 pb-10 md:p-8 md:pt-20">
         <motion.h1
           initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}

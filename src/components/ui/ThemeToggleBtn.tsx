@@ -1,42 +1,20 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const ThemeToggleBtn = () => {
-  const [isDark, setIsDark] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-
-    const savedTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    const shouldBeDark =
-      savedTheme === "dark" || (!savedTheme && systemPrefersDark);
-    setIsDark(shouldBeDark);
-
-    // Apply theme to document
-    if (shouldBeDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
+  const isDark = resolvedTheme === "dark";
 
-    if (newTheme) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+  const toggleTheme = () => {
+    setTheme(isDark ? "light" : "dark");
   };
 
   if (!mounted) {
@@ -48,7 +26,7 @@ const ThemeToggleBtn = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="relative flex h-8 w-8 items-center justify-center rounded-full bg-transparent text-neutral-600 transition-colors hover:bg-neutral-100 dark:bg-neutral-800/80 dark:text-neutral-300 dark:hover:bg-neutral-700/80"
+      className="text-muted-foreground hover:bg-muted dark:bg-card/80 dark:text-muted-foreground dark:hover:bg-accent/80 relative flex h-8 w-8 items-center justify-center rounded-full bg-transparent transition-colors"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"

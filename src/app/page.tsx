@@ -4,9 +4,8 @@ import Projects from "@/components/projects/Projects";
 import About from "@/components/About";
 import Knowledge from "@/components/Knowledge";
 import Hero from "@/components/Hero";
-import Footer from "@/components/Footer";
-import ContactSection from "@/components/ContactSection";
-import SideScale from "@/components/SideScale";
+import AboutMe from "@/components/AboutMe";
+import Setup from "@/components/Setup";
 import { motion } from "motion/react";
 
 const page = () => {
@@ -16,15 +15,13 @@ const page = () => {
     about: 0.2,
     projects: 0.4,
     knowledge: 0.6,
-    contact: 0.8,
-    footer: 1.0,
+    aboutMe: 0.8,
+    setup: 1.0,
   };
 
   return (
     <div className="flex min-h-screen items-start justify-center">
       <Container className="relative min-h-screen px-4 pt-16 pb-10 md:px-8 md:pt-20">
-        <SideScale />
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,19 +60,19 @@ const page = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: sectionDelays.contact }}
+          transition={{ duration: 0.3, delay: sectionDelays.aboutMe }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <ContactSection />
+          <AboutMe />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: sectionDelays.footer }}
+          transition={{ duration: 0.3, delay: sectionDelays.setup }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <Footer />
+          <Setup />
         </motion.div>
       </Container>
     </div>

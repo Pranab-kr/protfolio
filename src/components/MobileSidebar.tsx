@@ -42,17 +42,17 @@ const MobileSidebar = ({
               stiffness: 300,
               damping: 30,
             }}
-            className="fixed top-0 left-0 z-50 h-full w-80 bg-white/95 shadow-2xl backdrop-blur-md md:hidden dark:bg-gray-900/95"
+            className="bg-background/95 fixed top-0 left-0 z-50 h-full w-80 shadow-2xl backdrop-blur-md md:hidden"
           >
             <div className="flex h-full flex-col">
               {/* Header */}
-              <div className="flex items-center justify-between border-b border-gray-200/50 p-6 dark:border-gray-700/50">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <div className="border-border/50 flex items-center justify-between border-b p-6">
+                <h2 className="text-foreground text-lg font-semibold">
                   Navigation
                 </h2>
                 <button
                   onClick={onClose}
-                  className="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                  className="text-muted-foreground hover:bg-muted hover:text-foreground rounded-lg p-2"
                 >
                   <X size={20} />
                 </button>
@@ -74,7 +74,7 @@ const MobileSidebar = ({
                           onNavClick(e, item.href);
                           onClose();
                         }}
-                        className="flex w-full rounded-lg px-4 py-3 text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+                        className="text-muted-foreground hover:bg-muted hover:text-foreground flex w-full rounded-lg px-4 py-3 text-left"
                       >
                         {item.title}
                       </Link>
@@ -84,11 +84,9 @@ const MobileSidebar = ({
               </div>
 
               {/* Footer with theme toggle */}
-              <div className="border-t border-gray-200/50 p-6 dark:border-gray-700/50">
+              <div className="border-border/50 border-t p-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
-                    Theme
-                  </span>
+                  <span className="text-muted-foreground text-sm">Theme</span>
                   <ThemeToggleBtn />
                 </div>
               </div>

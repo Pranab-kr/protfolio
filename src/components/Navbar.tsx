@@ -64,12 +64,16 @@ const Navbar = () => {
               duration: 0.3,
               ease: "easeInOut",
             }}
-            className="flex max-w-4xl items-center justify-between rounded-full bg-white/40 px-2 py-2 pt-2 backdrop-blur-md dark:bg-black/90"
+            className={`flex max-w-4xl items-center justify-between rounded-full px-2 py-2 pt-2 transition-colors duration-300 ${
+              scrolled
+                ? "bg-card/70 border backdrop-blur-md dark:border-white/10"
+                : "bg-card"
+            }`}
           >
             <Link href="/" className="cursor-pointer">
               <Image
                 className="h-10 w-10 rounded-full transition-transform hover:scale-105"
-                src="/onisun.jpg"
+                src="/samurai.png"
                 height={100}
                 width={100}
                 alt="logo"
@@ -90,7 +94,7 @@ const Navbar = () => {
                     {hoverred === idx && (
                       <motion.span
                         layoutId="hovered-span"
-                        className="absolute inset-0 h-full w-full rounded-md bg-neutral-100 dark:bg-neutral-800"
+                        className="bg-muted dark:bg-accent absolute inset-0 h-full w-full rounded-md"
                       ></motion.span>
                     )}
                     <span className="relative z-10">{item.title}</span>

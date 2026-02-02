@@ -49,14 +49,14 @@ export const ContactForm = () => {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="name"
-          className="text-sm font-medium tracking-tight text-neutral-600"
+          className="text-muted-foreground text-sm font-medium tracking-tight"
         >
           Name
         </label>
         <input
           type="text"
           placeholder="Your Name"
-          className="focus:ring-primary shadow-minimal rounded-md bg-transparent px-4 py-2 focus:ring-2 focus:outline-none"
+          className="focus:ring-primary/10 shadow-minimal rounded-md border border-black/10 bg-transparent px-4 py-2 focus:ring-1 focus:outline-none dark:border-white/10 dark:shadow-white/10"
           value={formData.name}
           id="name"
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -65,14 +65,14 @@ export const ContactForm = () => {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="email"
-          className="text-sm font-medium tracking-tight text-neutral-600"
+          className="text-muted-foreground text-sm font-medium tracking-tight"
         >
           Email
         </label>
         <input
           type="email"
           placeholder="Your Email"
-          className="focus:ring-primary shadow-minimal rounded-md bg-transparent px-4 py-2 focus:ring-2 focus:outline-none"
+          className="focus:ring-primary/10 shadow-minimal rounded-md border border-black/10 bg-transparent px-4 py-2 focus:ring-1 focus:outline-none dark:border-white/10 dark:shadow-white/10"
           value={formData.email}
           id="email"
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -81,13 +81,13 @@ export const ContactForm = () => {
       <div className="flex flex-col gap-2">
         <label
           htmlFor="message"
-          className="text-sm font-medium tracking-tight text-neutral-600"
+          className="text-muted-foreground text-sm font-medium tracking-tight"
         >
           Message
         </label>
         <textarea
           placeholder="Your Message"
-          className="focus:ring-primary shadow-minimal resize-none rounded-md border border-neutral-300 bg-transparent px-4 py-2 focus:ring-2 focus:outline-none"
+          className="focus:ring-primary/10 shadow-minimal border-input resize-none rounded-md border bg-transparent px-4 py-2 focus:ring-1 focus:outline-none dark:border-white/10 dark:shadow-white/10"
           value={formData.message}
           id="message"
           onChange={(e) =>
@@ -96,7 +96,7 @@ export const ContactForm = () => {
         />
         <button
           type="submit"
-          className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+          className="bg-primary text-primary-foreground mt-4 rounded-md px-4 py-2"
         >
           Send Message
         </button>

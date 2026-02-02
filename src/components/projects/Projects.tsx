@@ -1,38 +1,119 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import BgPro from "../BgPro";
-import SvgHover from "./SvgHover ";
-import { TextAnimate } from "@/components/magicui/text-animate";
+import { ProjectCard, Project } from "./ProjectCard";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiNodedotjs,
+  SiMongodb,
+  SiFramer,
+} from "react-icons/si";
+
+const projects: Project[] = [
+  {
+    title: "E-Commerce Platform",
+    description:
+      "A modern e-commerce platform built with React and Node.js featuring real-time updates and seamless checkout",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    slug: "ecommerce-platform",
+    technologies: [
+      { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs className="size-full text-[#339933]" />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb className="size-full text-[#47A248]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+    ],
+    isWorking: true,
+  },
+  {
+    title: "Task Management App",
+    description:
+      "An AI-powered task management app that helps teams collaborate efficiently with smart suggestions",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    slug: "task-management",
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-foreground size-full" />,
+      },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="size-full text-[#3178C6]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer className="size-full text-[#0055FF]" />,
+      },
+    ],
+    isWorking: true,
+  },
+  {
+    title: "Social Dashboard",
+    description:
+      "A responsive social media dashboard with analytics, post scheduling, and engagement tracking features",
+    image: "/keyBoard.png",
+    link: "#",
+    slug: "social-dashboard",
+    technologies: [
+      { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="size-full text-[#3178C6]" />,
+      },
+      {
+        name: "Node.js",
+        icon: <SiNodedotjs className="size-full text-[#339933]" />,
+      },
+    ],
+    isWorking: false,
+  },
+  {
+    title: "Portfolio Template",
+    description:
+      "Portfolio website template with beautiful animations and dark mode support built with Next.js",
+    image: "/keyBoard.png",
+    link: "#",
+    github: "https://github.com",
+    slug: "portfolio-template",
+    technologies: [
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-foreground size-full" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer className="size-full text-[#0055FF]" />,
+      },
+    ],
+    isWorking: true,
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Project One",
-      src: "/keyBoard.png",
-      href: "#",
-      description: "A modern e-commerce platform built with React and Node.js",
-    },
-    {
-      title: "Project Two",
-      src: "/keyBoard.png",
-      href: "#",
-      description:
-        "An AI-powered task management app that helps teams collaborate.",
-    },
-    {
-      title: "Project Three",
-      src: "/keyBoard.png",
-      href: "#",
-      description:
-        "A responsive social media dashboard with analytics, post scheduling, and ",
-    },
-  ];
-  const projectDescription: string = "I Love Building Web apps.";
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -41,28 +122,20 @@ const Projects = () => {
         duration: 0.5,
         ease: "easeOut",
       }}
-      className="border-y border-neutral-200 px-4 py-8 md:px-6"
+      className="border-border border-y px-4 py-8 md:px-6"
       id="Projects-Section"
     >
-      <div className="text-primary md:text-md relative w-fit py-1 text-sm">
-        <span>
-          <BgPro />
-        </span>
-
-        <TextAnimate
-          animation="blurInUp"
-          once={true}
-          by="word"
-          duration={0.2}
-          delay={0.3}
-        >
-          {projectDescription}
-        </TextAnimate>
+      {/* Section Heading */}
+      <div className="mb-8">
+        <p className="text-secondary text-sm">Featured</p>
+        <h2 className="text-foreground text-2xl font-bold">Projects</h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 py-5 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+      {/* Project Grid */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
         {projects.map((project, idx) => (
           <motion.div
+            key={project.title + idx}
             initial={{
               opacity: 0,
               filter: "blur(10px)",
@@ -75,36 +148,24 @@ const Projects = () => {
             }}
             transition={{
               duration: 0.3,
-              delay: idx * 0.3,
+              delay: idx * 0.1,
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            whileHover={{
-              transition: { duration: 0.3, ease: "easeInOut" },
-            }}
-            className="group hover:shadow-minimal rounded-3xl transition-shadow duration-300"
-            key={project.title}
           >
-            <Link href={project.href}>
-              <Image
-                src={project.src}
-                alt={project.title}
-                height={500}
-                width={500}
-                className="aspect-square rounded-xl object-cover transition-transform duration-300 ease-in-out group-hover:scale-[1.02]"
-              />
-              <div className="pb-4 transition-all duration-300 ease-in-out group-hover:pl-[14px]">
-                <h2 className="z-20 pt-6 font-medium tracking-tight text-neutral-500 dark:text-neutral-300">
-                  {project.title}
-                </h2>
-                <p className="max-w-sm pt-3 text-xs text-neutral-500 dark:text-neutral-400">
-                  {project.description}
-                </p>
-                <SvgHover />
-              </div>
-            </Link>
+            <ProjectCard project={project} />
           </motion.div>
         ))}
+      </div>
+
+      {/* Show All Button */}
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="/projects"
+          className="border-border text-foreground hover:bg-muted rounded-lg border px-4 py-2 text-sm transition-colors"
+        >
+          Show all projects
+        </Link>
       </div>
     </motion.div>
   );

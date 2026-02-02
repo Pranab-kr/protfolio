@@ -1,6 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
+import SideScale from "@/components/SideScale";
 export const Container = ({
   children,
   className,
@@ -13,10 +14,12 @@ export const Container = ({
   return (
     <div
       className={cn(
-        `mx-auto w-full max-w-4xl ${nav === "isNav" ? "bg-transparent" : "bg-white dark:bg-black"} relative`,
+        `mx-auto w-full max-w-4xl ${nav === "isNav" ? "bg-transparent" : "bg-card"} relative`,
         className
       )}
     >
+      {nav !== "isNav" && <SideScale />}
+
       {children}
     </div>
   );

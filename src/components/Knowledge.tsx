@@ -27,8 +27,8 @@ const Knowledge = () => {
   const knowledgeTitle = "Sharing knowledge as I learn.";
 
   return (
-    <div className="border-b border-neutral-200 px-4 pt-12 pb-14 md:px-6">
-      <div className="relative w-fit py-1 text-neutral-700">
+    <div className="border-border border-b px-4 pt-12 pb-14 md:px-6">
+      <div className="text-foreground relative w-fit py-1">
         <span>
           <BgPro />
         </span>
