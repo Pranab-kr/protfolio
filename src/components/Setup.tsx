@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { LuSettings, LuCode, LuTerminal } from "react-icons/lu";
+import { Button } from "./ui/button";
 
 const setupItems = [
   {
@@ -59,22 +60,26 @@ const Setup = () => {
             transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
             viewport={{ once: true }}
           >
-            <Link
-              href={item.href}
-              className="border-border bg-card hover:bg-muted/50 group flex items-center gap-3 rounded-lg border p-3 transition-colors sm:gap-4 sm:rounded-xl sm:p-4"
+            <Button
+              asChild
+              variant="outline"
+              className="border-border bg-card hover:bg-muted/50 group flex h-auto w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors sm:gap-4 sm:rounded-xl sm:p-4"
             >
-              <div className="bg-muted flex size-8 shrink-0 items-center justify-center rounded-md sm:size-10 sm:rounded-lg">
-                <item.icon className="text-foreground size-4 sm:size-5" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="text-foreground group-hover:text-primary truncate text-sm font-semibold transition-colors sm:text-base">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground truncate text-xs sm:text-sm">
-                  {item.description}
-                </p>
-              </div>
-            </Link>
+              <Link href={item.href}>
+                <div className="bg-muted flex size-8 shrink-0 items-center justify-center rounded-md sm:size-10 sm:rounded-lg">
+                  <item.icon className="text-foreground size-4 sm:size-5" />
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-foreground group-hover:text-primary truncate text-sm font-semibold transition-colors sm:text-base">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground truncate text-xs sm:text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </Link>
+            </Button>
           </motion.div>
         ))}
       </div>
