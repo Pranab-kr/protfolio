@@ -5,6 +5,7 @@ import React, { useState, useMemo } from "react";
 import { motion } from "motion/react";
 import { ProjectCard, Project } from "@/components/projects/ProjectCard";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 import {
   SiReact,
   SiNextdotjs,
@@ -193,59 +194,55 @@ const ProjectsPage = () => {
 
   return (
     <div className="flex min-h-screen items-start justify-center">
-      <Container className="min-h-screen w-full max-w-4xl px-4 pt-16 pb-10 md:px-8 md:pt-24">
+      <Container className="min-h-screen w-full max-w-4xl px-2 pt-14 pb-8 sm:px-4 sm:pt-16 sm:pb-10 md:px-8 md:pt-24">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-8 text-center"
+          className="mb-6 text-center sm:mb-8"
         >
-          <h1 className="text-foreground mb-4 text-4xl font-bold md:text-5xl">
+          <h1 className="text-foreground mb-3 text-2xl font-bold sm:mb-4 sm:text-4xl md:text-5xl">
             Projects
           </h1>
-          <p className="text-muted-foreground text-base md:text-lg">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg">
             My projects and work across different technologies and domains.
           </p>
         </motion.div>
 
-        <Separator className="mb-8" />
+        <Separator className="mb-6 sm:mb-8" />
 
         {/* Filter Section */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="mb-8"
+          className="mb-6 sm:mb-8"
         >
-          <h2 className="text-foreground mb-4 px-6 text-lg font-semibold">
+          <h2 className="text-foreground mb-3 px-2 text-base font-semibold sm:mb-4 sm:px-6 sm:text-lg">
             Filter by Status
           </h2>
-          <div className="flex flex-wrap gap-3 px-4">
-            <button
+          <div className="flex flex-wrap gap-2 px-2 sm:gap-3 sm:px-4">
+            <Button
+              variant={filter === "working" ? "default" : "outline"}
+              size="sm"
+              className="h-auto rounded-full px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm"
               onClick={() =>
                 setFilter(filter === "working" ? "all" : "working")
               }
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
-                filter === "working"
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border text-foreground hover:bg-muted"
-              }`}
             >
               Working ({workingCount})
-            </button>
-            <button
+            </Button>
+            <Button
+              variant={filter === "building" ? "default" : "outline"}
+              size="sm"
+              className="h-auto rounded-full px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm"
               onClick={() =>
                 setFilter(filter === "building" ? "all" : "building")
               }
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
-                filter === "building"
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border text-foreground hover:bg-muted"
-              }`}
             >
               Building ({buildingCount})
-            </button>
+            </Button>
           </div>
         </motion.div>
 
@@ -255,19 +252,19 @@ const ProjectsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <h2 className="text-foreground mb-6 px-6 text-xl font-bold">
+          <h2 className="text-foreground mb-4 px-2 text-lg font-bold sm:mb-6 sm:px-6 sm:text-xl">
             {filter === "all"
               ? "All Projects"
               : filter === "working"
                 ? "Working Projects"
                 : "Building Projects"}{" "}
-            <span className="text-muted-foreground text-base font-normal">
+            <span className="text-muted-foreground text-sm font-normal sm:text-base">
               ({filteredProjects.length} projects)
             </span>
           </h2>
 
           {/* Project Grid */}
-          <div className="grid grid-cols-1 gap-6 px-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 px-2 sm:gap-6 sm:px-6 md:grid-cols-2">
             {filteredProjects.map((project, idx) => (
               <motion.div
                 key={project.title + idx}
@@ -291,7 +288,7 @@ const ProjectsPage = () => {
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-muted-foreground py-12 text-center">
+            <div className="text-muted-foreground py-8 text-center text-sm sm:py-12 sm:text-base">
               No projects found with the selected filter.
             </div>
           )}

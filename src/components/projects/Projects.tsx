@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ProjectCard, Project } from "./ProjectCard";
+import { Button } from "@/components/ui/button";
 import {
   SiReact,
   SiNextdotjs,
@@ -122,17 +123,19 @@ const Projects = () => {
         duration: 0.5,
         ease: "easeOut",
       }}
-      className="border-border border-y px-4 py-8 md:px-6"
+      className="border-border border-y px-2 py-6 sm:px-4 sm:py-8 md:px-6"
       id="Projects-Section"
     >
       {/* Section Heading */}
-      <div className="mb-8">
-        <p className="text-secondary text-sm">Featured</p>
-        <h2 className="text-foreground text-2xl font-bold">Projects</h2>
+      <div className="mb-6 sm:mb-8">
+        <p className="text-secondary text-xs sm:text-sm">Featured</p>
+        <h2 className="text-foreground text-xl font-bold sm:text-2xl">
+          Projects
+        </h2>
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6">
         {projects.map((project, idx) => (
           <motion.div
             key={project.title + idx}
@@ -159,13 +162,15 @@ const Projects = () => {
       </div>
 
       {/* Show All Button */}
-      <div className="mt-8 flex justify-center">
-        <Link
-          href="/projects"
-          className="border-border text-foreground hover:bg-muted rounded-lg border px-4 py-2 text-sm transition-colors"
+      <div className="mt-6 flex justify-center sm:mt-8">
+        <Button
+          variant="outline"
+          size="sm"
+          className="h-auto px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm"
+          asChild
         >
-          Show all projects
-        </Link>
+          <Link href="/projects">Show all projects</Link>
+        </Button>
       </div>
     </motion.div>
   );

@@ -21,7 +21,7 @@ const page = () => {
 
   return (
     <div className="flex min-h-screen items-start justify-center">
-      <Container className="relative min-h-screen px-4 pt-16 pb-10 md:px-8 md:pt-20">
+      <Container className="relative min-h-screen px-2 pt-14 pb-8 sm:px-4 sm:pt-16 sm:pb-10 md:px-8 md:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

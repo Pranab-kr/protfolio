@@ -42,25 +42,25 @@ const MobileSidebar = ({
               stiffness: 300,
               damping: 30,
             }}
-            className="bg-background/95 fixed top-0 left-0 z-50 h-full w-80 shadow-2xl backdrop-blur-md md:hidden"
+            className="bg-background/95 fixed top-0 left-0 z-50 h-full w-[280px] shadow-2xl backdrop-blur-md sm:w-80 md:hidden"
           >
             <div className="flex h-full flex-col">
               {/* Header */}
-              <div className="border-border/50 flex items-center justify-between border-b p-6">
-                <h2 className="text-foreground text-lg font-semibold">
+              <div className="border-border/50 flex items-center justify-between border-b p-4 sm:p-6">
+                <h2 className="text-foreground text-base font-semibold sm:text-lg">
                   Navigation
                 </h2>
                 <button
                   onClick={onClose}
-                  className="text-muted-foreground hover:bg-muted hover:text-foreground rounded-lg p-2"
+                  className="text-muted-foreground hover:bg-muted hover:text-foreground rounded-lg p-1.5 sm:p-2"
                 >
-                  <X size={20} />
+                  <X size={18} className="sm:size-5" />
                 </button>
               </div>
 
               {/* Navigation Links */}
-              <div className="flex-1 overflow-y-auto px-6 py-4">
-                <nav className="space-y-2">
+              <div className="flex-1 overflow-y-auto px-4 py-3 sm:px-6 sm:py-4">
+                <nav className="space-y-1.5 sm:space-y-2">
                   {navItems.map((item, idx) => (
                     <motion.div
                       key={idx}
@@ -74,7 +74,7 @@ const MobileSidebar = ({
                           onNavClick(e, item.href);
                           onClose();
                         }}
-                        className="text-muted-foreground hover:bg-muted hover:text-foreground flex w-full rounded-lg px-4 py-3 text-left"
+                        className="text-muted-foreground hover:bg-muted hover:text-foreground flex w-full rounded-lg px-3 py-2.5 text-left text-sm sm:px-4 sm:py-3 sm:text-base"
                       >
                         {item.title}
                       </Link>
@@ -84,9 +84,11 @@ const MobileSidebar = ({
               </div>
 
               {/* Footer with theme toggle */}
-              <div className="border-border/50 border-t p-6">
+              <div className="border-border/50 border-t p-4 sm:p-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground text-sm">Theme</span>
+                  <span className="text-muted-foreground text-xs sm:text-sm">
+                    Theme
+                  </span>
                   <ThemeToggleBtn />
                 </div>
               </div>

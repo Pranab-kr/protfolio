@@ -28,14 +28,14 @@ const setupItems = [
 
 const Setup = () => {
   return (
-    <div className="border-border border-t px-4 pt-8 pb-10 md:px-6">
+    <div className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6">
       {/* Section Header */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         viewport={{ once: true }}
-        className="text-muted-foreground text-sm"
+        className="text-muted-foreground text-xs sm:text-sm"
       >
         Development
       </motion.p>
@@ -44,13 +44,13 @@ const Setup = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
-        className="text-foreground text-2xl font-bold tracking-tight md:text-3xl"
+        className="text-foreground text-xl font-bold tracking-tight sm:text-2xl md:text-3xl"
       >
         Setup
       </motion.h2>
 
       {/* Setup Items */}
-      <div className="mt-6 space-y-3">
+      <div className="mt-4 space-y-2 sm:mt-6 sm:space-y-3">
         {setupItems.map((item, index) => (
           <motion.div
             key={item.title}
@@ -61,16 +61,16 @@ const Setup = () => {
           >
             <Link
               href={item.href}
-              className="border-border bg-card hover:bg-muted/50 group flex items-center gap-4 rounded-xl border p-4 transition-colors"
+              className="border-border bg-card hover:bg-muted/50 group flex items-center gap-3 rounded-lg border p-3 transition-colors sm:gap-4 sm:rounded-xl sm:p-4"
             >
-              <div className="bg-muted flex size-10 shrink-0 items-center justify-center rounded-lg">
-                <item.icon className="text-foreground size-5" />
+              <div className="bg-muted flex size-8 shrink-0 items-center justify-center rounded-md sm:size-10 sm:rounded-lg">
+                <item.icon className="text-foreground size-4 sm:size-5" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-foreground group-hover:text-primary text-base font-semibold transition-colors">
+              <div className="min-w-0 flex-1">
+                <h3 className="text-foreground group-hover:text-primary truncate text-sm font-semibold transition-colors sm:text-base">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground truncate text-xs sm:text-sm">
                   {item.description}
                 </p>
               </div>

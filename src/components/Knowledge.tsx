@@ -27,7 +27,7 @@ const Knowledge = () => {
   const knowledgeTitle = "Sharing knowledge as I learn.";
 
   return (
-    <div className="border-border border-b px-4 pt-12 pb-14 md:px-6">
+    <div className="border-border border-b px-2 pt-8 pb-10 sm:px-4 sm:pt-12 sm:pb-14 md:px-6">
       <div className="text-foreground relative w-fit py-1">
         <span>
           <BgPro />
@@ -51,15 +51,17 @@ const Knowledge = () => {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ delay: 0.5 + idx * 0.1, duration: 0.3 }}
             viewport={{ once: true }}
-            className="pt-10"
+            className="pt-6 sm:pt-10"
           >
-            <div className="flex justify-between">
-              <h3 className="text-primary font-semibold">{article.title}</h3>
-              <p className="text-secondary text-sm leading-tight font-light tracking-tight">
+            <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4">
+              <h3 className="text-primary text-sm font-semibold sm:text-base">
+                {article.title}
+              </h3>
+              <p className="text-secondary text-xs leading-tight font-light tracking-tight sm:text-sm">
                 {article.date}
               </p>
             </div>
-            <p className="text-secondary max-w-xl pt-3">
+            <p className="text-secondary max-w-xl pt-2 text-xs sm:pt-3 sm:text-sm">
               {article.description}
             </p>
           </motion.div>

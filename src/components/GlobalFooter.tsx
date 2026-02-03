@@ -8,7 +8,7 @@ import { Container } from "./container";
 
 const GlobalFooter = () => {
   return (
-    <Container className="px-4 pb-10 md:px-8">
+    <Container className="px-2 pb-8 sm:px-4 sm:pb-10 md:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

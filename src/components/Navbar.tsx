@@ -51,20 +51,20 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-50">
-        <Container nav="isNav" className="px-4 md:px-12">
+        <Container nav="isNav" className="px-2 sm:px-4 md:px-12">
           <motion.nav
             animate={{
               boxShadow: scrolled ? "var(--shadow-minimal)" : "none",
-              width: scrolled ? "90%" : "100%",
+              width: scrolled ? "95%" : "100%",
               marginLeft: "auto",
               marginRight: "auto",
-              y: scrolled ? 15 : 0,
+              y: scrolled ? 10 : 0,
             }}
             transition={{
               duration: 0.3,
               ease: "easeInOut",
             }}
-            className={`flex max-w-4xl items-center justify-between rounded-full px-2 py-2 pt-2 transition-colors duration-300 ${
+            className={`flex max-w-4xl items-center justify-between rounded-full px-2 py-1.5 transition-colors duration-300 sm:px-3 sm:py-2 ${
               scrolled
                 ? "bg-card/70 border backdrop-blur-md dark:border-white/10"
                 : "bg-card"
@@ -72,7 +72,7 @@ const Navbar = () => {
           >
             <Link href="/" className="cursor-pointer">
               <Image
-                className="h-10 w-10 rounded-full transition-transform hover:scale-105"
+                className="h-8 w-8 rounded-full transition-transform hover:scale-105 sm:h-10 sm:w-10"
                 src="/samurai.png"
                 height={100}
                 width={100}

@@ -51,23 +51,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardHeader>
 
-      <CardContent className="px-4 pt-4 md:px-6">
-        <div className="space-y-4">
+      <CardContent className="px-3 pt-3 sm:px-4 sm:pt-4 md:px-6">
+        <div className="space-y-3 sm:space-y-4">
           {/* Project Header - Title and Icons */}
-          <div className="flex items-center justify-between gap-4">
-            <h3 className="text-foreground group-hover:text-primary text-lg leading-tight font-semibold transition-colors">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
+            <h3 className="text-foreground group-hover:text-primary text-base leading-tight font-semibold transition-colors sm:text-lg">
               {project.title}
             </h3>
-            <div className="flex items-center gap-2">
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
-                      className="text-muted-foreground hover:text-foreground flex size-6 items-center justify-center transition-colors"
+                      className="text-muted-foreground hover:text-foreground flex size-5 items-center justify-center transition-colors sm:size-6"
                       href={project.link}
                       target="_blank"
                     >
-                      <LuGlobe className="size-5" />
+                      <LuGlobe className="size-4 sm:size-5" />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -80,11 +80,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Link
-                        className="text-muted-foreground hover:text-foreground flex size-6 items-center justify-center transition-colors"
+                        className="text-muted-foreground hover:text-foreground flex size-5 items-center justify-center transition-colors sm:size-6"
                         href={project.github}
                         target="_blank"
                       >
-                        <LuGithub className="size-5" />
+                        <LuGithub className="size-4 sm:size-5" />
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -97,21 +97,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-secondary line-clamp-2 text-sm">
+          <p className="text-secondary line-clamp-2 text-xs sm:text-sm">
             {project.description}
           </p>
 
           {/* Technologies */}
           <div>
-            <h4 className="text-muted-foreground mb-2 text-xs font-medium">
+            <h4 className="text-muted-foreground mb-1.5 text-[10px] font-medium sm:mb-2 sm:text-xs">
               Technologies
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               <TooltipProvider>
                 {project.technologies.map((technology, index) => (
                   <Tooltip key={index}>
                     <TooltipTrigger asChild>
-                      <div className="size-6 transition-all duration-300 hover:scale-110 hover:cursor-pointer">
+                      <div className="size-5 transition-all duration-300 hover:scale-110 hover:cursor-pointer sm:size-6">
                         {technology.icon}
                       </div>
                     </TooltipTrigger>
@@ -126,9 +126,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardContent>
 
-      <CardFooter className="flex justify-between p-4 pt-0 md:p-6 md:pt-0">
+      <CardFooter className="flex flex-col gap-2 p-3 pt-0 sm:flex-row sm:justify-between sm:p-4 sm:pt-0 md:p-6 md:pt-0">
         <div
-          className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs ${
+          className={`flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[10px] sm:px-2 sm:py-1 sm:text-xs ${
             project.isWorking !== false
               ? "bg-green-500/10 text-green-600 dark:text-green-400"
               : "bg-red-500/10 text-red-600 dark:text-red-400"
@@ -136,12 +136,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         >
           {project.isWorking !== false ? (
             <>
-              <div className="size-2 animate-pulse rounded-full bg-green-500" />
-              All Systems Operational
+              <div className="size-1.5 animate-pulse rounded-full bg-green-500 sm:size-2" />
+              <span className="xs:inline hidden">All Systems Operational</span>
+              <span className="xs:hidden">Operational</span>
             </>
           ) : (
             <>
-              <div className="size-2 animate-pulse rounded-full bg-red-500" />
+              <div className="size-1.5 animate-pulse rounded-full bg-red-500 sm:size-2" />
               Building
             </>
           )}
@@ -149,9 +150,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <Link
           href={project.slug ? `/projects/${project.slug}` : project.link}
           target={project.slug ? undefined : "_blank"}
-          className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-sm underline-offset-4 transition-colors hover:underline"
+          className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-xs underline-offset-4 transition-colors hover:underline sm:text-sm"
         >
-          View Details <LuArrowRight className="size-4" />
+          View Details <LuArrowRight className="size-3.5 sm:size-4" />
         </Link>
       </CardFooter>
     </Card>

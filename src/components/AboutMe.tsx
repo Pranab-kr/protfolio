@@ -43,14 +43,14 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="border-border border-t px-4 pt-8 pb-10 md:px-6">
+    <div className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6">
       {/* Section Header */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         viewport={{ once: true }}
-        className="text-muted-foreground text-sm"
+        className="text-muted-foreground text-xs sm:text-sm"
       >
         About
       </motion.p>
@@ -59,7 +59,7 @@ const AboutMe = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
-        className="text-foreground text-2xl font-bold tracking-tight md:text-3xl"
+        className="text-foreground text-xl font-bold tracking-tight sm:text-2xl md:text-3xl"
       >
         Me
       </motion.h2>
@@ -70,7 +70,7 @@ const AboutMe = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.2 }}
         viewport={{ once: true }}
-        className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-start"
+        className="mt-4 flex flex-col gap-4 sm:mt-6 sm:flex-row sm:items-start sm:gap-6"
       >
         {/* Avatar */}
         <div className="shrink-0">
@@ -79,17 +79,17 @@ const AboutMe = () => {
             alt="Profile"
             width={120}
             height={120}
-            className="border-border rounded-lg border object-cover"
+            className="border-border h-20 w-20 rounded-lg border object-cover sm:h-[100px] sm:w-[100px] md:h-[120px] md:w-[120px]"
           />
         </div>
 
         {/* Info */}
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 space-y-3 sm:space-y-4">
           <div>
-            <h3 className="text-foreground text-xl font-semibold">
+            <h3 className="text-foreground text-lg font-semibold sm:text-xl">
               Pranab Kumar
             </h3>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+            <p className="text-muted-foreground mt-1.5 text-xs leading-relaxed sm:mt-2 sm:text-sm">
               I&apos;m a Full Stack web developer and Open Source Contributor. I
               love building products to solve real-world problems. I&apos;m
               specialized in building MVPs.
@@ -98,17 +98,17 @@ const AboutMe = () => {
 
           {/* Skills */}
           <div>
-            <h4 className="text-foreground mb-3 text-sm font-semibold">
+            <h4 className="text-foreground mb-2 text-xs font-semibold sm:mb-3 sm:text-sm">
               Skills
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               <TooltipProvider delayDuration={100}>
                 {skills.map((skill) => (
                   <Tooltip key={skill.name}>
                     <TooltipTrigger asChild>
-                      <div className="bg-muted/50 hover:bg-muted flex cursor-pointer items-center justify-center rounded-md p-2 transition-all hover:scale-110">
+                      <div className="bg-muted/50 hover:bg-muted flex cursor-pointer items-center justify-center rounded-md p-1.5 transition-all hover:scale-110 sm:p-2">
                         <skill.icon
-                          className="size-5"
+                          className="size-4 sm:size-5"
                           style={{ color: skill.color }}
                         />
                       </div>
@@ -130,18 +130,20 @@ const AboutMe = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.3 }}
         viewport={{ once: true }}
-        className="mt-10"
+        className="mt-8 sm:mt-10"
       >
-        <p className="text-muted-foreground text-sm">Featured</p>
-        <h3 className="text-foreground text-xl font-bold">GitHub Activity</h3>
+        <p className="text-muted-foreground text-xs sm:text-sm">Featured</p>
+        <h3 className="text-foreground text-lg font-bold sm:text-xl">
+          GitHub Activity
+        </h3>
 
         {/* GitHub Calendar - Hidden Scrollbar and Slider */}
-        <div className="border-border bg-card mt-4 overflow-hidden rounded-lg border p-8 [&_.react-activity-calendar__scroll-container]:overflow-visible [&_input[type='range']]:hidden">
+        <div className="border-border bg-card mt-3 overflow-x-auto rounded-lg border p-3 sm:mt-4 sm:p-4 md:p-8 [&_.react-activity-calendar__scroll-container]:overflow-visible [&_input[type='range']]:hidden">
           <GitHubCalendar
             username="Pranab-kr"
-            blockSize={12}
-            blockMargin={4}
-            fontSize={12}
+            blockSize={10}
+            blockMargin={3}
+            fontSize={10}
             theme={calendarTheme}
             colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
           />
