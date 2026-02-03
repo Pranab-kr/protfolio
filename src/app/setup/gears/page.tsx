@@ -76,8 +76,8 @@ export default function GearsPage() {
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.3, delay: 0.1 }}
           className="space-y-2 text-center sm:space-y-3"
         >
@@ -93,17 +93,17 @@ export default function GearsPage() {
         <Separator className="my-6 sm:my-8" />
 
         {/* Gear Categories */}
-        <div className="space-y-8 md:space-y-12">
+        <div className="space-y-8 px-6 md:space-y-12">
           {gears.map((category, catIndex) => (
             <motion.div
               key={category.category}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 15, filter: "blur(5px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.3, delay: 0.2 + catIndex * 0.1 }}
               className="space-y-4 md:space-y-6"
             >
               {/* Category Header */}
-              <div className="flex items-center gap-3 px-6">
+              <div className="flex items-center gap-3">
                 <div className="bg-muted text-muted-foreground flex items-center justify-center rounded-md border border-black/10 p-2 dark:border-white/10">
                   {category.icon}
                 </div>
@@ -117,8 +117,8 @@ export default function GearsPage() {
                 {category.items.map((item, index) => (
                   <motion.div
                     key={item.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, filter: "blur(5px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
                     transition={{
                       duration: 0.3,
                       delay: 0.3 + catIndex * 0.1 + index * 0.05,
