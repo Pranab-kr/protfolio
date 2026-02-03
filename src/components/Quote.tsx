@@ -4,6 +4,58 @@ import { useEffect, useState } from "react";
 
 const quotes = [
   {
+    quote: `If u cant take the Risks, you can't create a future.`,
+    author: "Mongo D. Luffy, One Piece",
+  },
+  {
+    quote: `Push through the pain, giving up hurts more.`,
+    author: "Vegeta, Dragon Ball Z",
+  },
+  {
+    quote: `Hard work is worthless for those that don't believe in themselves.`,
+    author: "Naruto Uzumaki, Naruto",
+  },
+  {
+    quote: `Sometime you need a little wishful thinking to keep on living.`,
+    author: "Misato Katsuragi, Neon Genesis Evangelion",
+  },
+  {
+    quote: `I guess, as long as i have life, all i can do is fight with all my might.`,
+    author: "Subaru Natsuki, Re:Zero",
+  },
+  {
+    quote: `You never be able to love anybody else until you love yourself.`,
+    author: "Lelouch Lamperouge, Code Geass",
+  },
+
+  {
+    quote: "Whatever you lose, you'll find it again—if you keep moving.",
+    author: "Eren Yeager",
+  },
+
+  { quote: "Power exists to protect, not to dominate.", author: "Gojo Satoru" },
+
+  { quote: "I don't need luck. I make my own fate.", author: "Sung Jin-Woo" },
+
+  {
+    quote: "Weakness is nothing but a state of mind.",
+    author: "Levi Ackerman",
+  },
+
+  { quote: "Even trash can shine if it refuses to rot.", author: "Kim Dokja" },
+
+  { quote: "The world isn't cruel—it's just honest.", author: "Itachi Uchiha" },
+
+  {
+    quote: "I climb not because I want to win, but because I refuse to fall.",
+    author: "Bam",
+  },
+
+  { quote: "Fear is proof that you still want to live.", author: "Ken Kaneki" },
+
+  { quote: "A king doesn't ask for permission.", author: "Ashborn" },
+
+  {
     quote: `A man who is master of patience is master of everything else.`,
     author: "George Savile",
   },
