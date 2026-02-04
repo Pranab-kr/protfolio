@@ -13,6 +13,7 @@ const page = () => {
   const sectionDelays = {
     hero: 0,
     about: 0.2,
+    spotify: 0.3,
     projects: 0.4,
     knowledge: 0.6,
     aboutMe: 0.8,

@@ -59,7 +59,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {project.title}
             </h3>
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-              <TooltipProvider>
+              <TooltipProvider delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
