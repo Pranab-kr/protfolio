@@ -1,0 +1,126 @@
+---
+title: "Resumine – AI Resume Analyzer"
+description: "An AI-powered web app that analyzes resumes for ATS compatibility and provides actionable feedback to improve hiring success."
+image: "/resumine.png"
+technologies:
+  [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS v4",
+    "shadcn/ui",
+    "Zustand",
+    "Puter.js",
+    "Claude AI",
+    "PDF.js",
+    "Recharts",
+  ]
+github: "https://github.com/Pranab-kr/resumine"
+live: "https://resumine.vercel.app/"
+timeline: "In progress"
+role: "Full Stack Developer"
+team: "Solo project"
+status: "active"
+featured: true
+isPublished: true
+---
+
+# Resumine – AI Resume Analyzer
+
+## Overview
+
+**Resumine** is a modern web application that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS).
+It uses **Claude AI** to analyze resumes and provide clear, structured feedback on quality, structure, keywords, and skills.
+
+---
+
+## Key Features
+
+### Resume Management
+
+- Drag-and-drop PDF upload (up to 20MB)
+- Client-side PDF → image preview using PDF.js
+- Cloud storage via Puter filesystem
+- Resume dashboard with detailed analysis pages
+
+### ATS Analysis
+
+- Overall ATS score (0–100)
+- Category-wise scoring:
+  - ATS Compatibility
+  - Tone & Style
+  - Content Quality
+  - Structure
+  - Skills Assessment
+- Animated score visualizations and color-coded badges
+
+### AI Feedback
+
+- Powered by **Claude Sonnet 4.5**
+- Optional job-specific analysis (company, role, description)
+- Actionable suggestions grouped into:
+  - **Good**
+  - **Needs Improvement**
+
+### User Experience
+
+- Secure authentication with Puter
+- Dark / light mode support
+- Fully responsive UI
+- Smooth animations and loading states
+
+---
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 (App Router), React Server Components
+- **State Management**: Zustand
+- **UI**: Tailwind CSS v4 + shadcn/ui
+- **AI**: Claude AI via Puter
+- **PDF Processing**: PDF.js (client-side)
+- **Charts**: Recharts
+- **Backend Services**: Puter (Auth, Storage, KV DB, AI)
+
+---
+
+## How It Works
+
+1. User uploads a resume PDF
+2. PDF is converted to images in-browser
+3. Files are stored in Puter cloud storage
+4. Claude AI analyzes content using structured prompts
+5. ATS scores and feedback are displayed visually
+
+---
+
+## Current Status
+
+**Completed**
+
+- Authentication & cloud storage
+- Resume upload and preview
+- AI-powered ATS analysis
+- Visual score breakdown
+- Responsive dashboard
+
+**Planned**
+
+- Resume comparison
+- PDF feedback export
+- Resume editing & regeneration
+- Job application tracking
+- Cover letter generation
+
+---
+
+## Highlights
+
+- No backend servers needed (client-side PDF processing)
+- Strong TypeScript type safety
+- Modular component architecture
+- Accessible UI with modern design
+- Optimized performance using React Server Components
+
+---
+
+**Resumine showcases modern full-stack development with AI integration, focusing on real-world usability, clean UI, and performance.**
