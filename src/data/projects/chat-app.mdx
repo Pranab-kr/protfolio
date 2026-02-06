@@ -1,0 +1,107 @@
+---
+title: "Chatty – Real-time Chat Platform"
+description: "A modern real-time chat application with rich UI, theming, and analytics, built on React 19 and Zustand with Socket.io-powered messaging."
+image: "/chat-app.png"
+technologies:
+  [
+    "React 19",
+    "Vite",
+    "Zustand",
+    "React Router v7",
+    "Tailwind CSS v4",
+    "shadcn-style UI",
+    "express.js",
+    "MongoDB",
+    "Socket.io Client",
+    "Axios",
+    "Recharts",
+  ]
+github: "https://github.com/Pranab-kr/chat-App"
+live: "https://chat-app-uunl.onrender.com"
+timeline: "In progress"
+role: "Full Stack Developer"
+team: "Solo project"
+status: "active"
+featured: false
+isPublished: true
+---
+# Chatty – Real-time Chat Platform
+## Overview
+**Chatty** is a modern real-time messaging platform focused on fast, responsive conversations and a polished user experience.
+
+---
+## Key Features
+### Real-time Messaging
+- Instant bi-directional messaging via **Socket.io Client**
+- Chat list and active conversation view
+- Typing / loading skeletons for smoother perceived performance
+- Message input with validation and UX-focused interactions
+### User & Session Management
+- Auth pages for login and signup flows
+- Profile and settings pages
+- Persistent auth and chat state using **Zustand** stores
+- Axios-based API integration for auth and data fetching
+### UI & Experience
+- Responsive, app-like layout with sidebar + chat container
+- Reusable, composable UI primitives (`button`, `input`, `dialog`, `sheet`, etc.)
+- Dark/light mode support via theme store
+- Skeleton states for sidebar and messages
+- Mobile-friendly navigation and drawer/sheet patterns
+### Analytics & Insights
+- Integrated **Recharts** components for visualizing conversation/activity data
+- Dashboard-ready chart primitives wired into the UI system
+- Layout components designed for future analytics panels and metrics
+---
+## Tech Stack
+- **Frontend**: React 19 + Vite
+- **Routing**: React Router v7
+- **State Management**: Zustand (`useAuthStore`, `useChatStore`, `useThemeStore`)
+- **UI**:
+  - Tailwind CSS v4 (via `@tailwindcss/vite`)
+  - shadcn-style component system (buttons, dialogs, forms, sheets, navigation, etc.)
+  - Lucide React icons
+- **Networking**:
+  - Axios for REST API calls
+  - Socket.io Client for real-time communication
+- **Forms & Validation**: React Hook Form + Zod + `@hookform/resolvers`
+- **Charts & Visualization**: Recharts
+- **Utilities**: `class-variance-authority`, `tailwind-merge`, `date-fns`, `sonner` / `react-hot-toast` for notifications
+---
+## How It Works
+1. User signs in or creates an account through the auth pages.
+2. Auth state is stored in a global **Zustand** store.
+3. The main layout renders:
+   - Sidebar with conversations / navigation
+   - Chat container with header, message list, and input
+4. The client connects to the backend via **Socket.io**, subscribing to relevant rooms/channels.
+5. Messages are:
+   - Sent via Socket.io
+   - Reflected optimistically in the UI
+   - Synced with the REST API through Axios where needed
+6. Charts and analytics components use the same shared state and Axios layer to display conversation metrics.
+---
+## Current Status
+**Completed**
+- Core layout (sidebar, navbar, chat container)
+- Auth, profile, and settings pages
+- Global theme, auth, and chat stores with Zustand
+- UI component library and skeleton states
+- Socket.io client integration for messaging
+- Chart primitives wired with Recharts
+**Planned**
+- Message search and filtering
+- Per-conversation settings (mute, pin, archive)
+- Read receipts and typing indicators
+- Group chats and roles
+- In-app notifications and activity feed
+- Deeper analytics dashboards (per-user and per-channel stats)
+---
+## Highlights
+- Modern React 19 architecture with Vite dev experience
+- Opinionated UI system built on Tailwind v4 + shadcn-style primitives
+- Centralized state with Zustand for predictable behavior
+- Real-time messaging via Socket.io client
+- Ready for analytics and monitoring via Recharts integration
+- Clean, reusable component structure for fast feature development
+---
+**Chatty demonstrates a production-ready front-end architecture for real-time messaging: performant, extensible, and designed for a polished chat experience.**

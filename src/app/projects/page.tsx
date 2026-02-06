@@ -16,6 +16,7 @@ import {
   SiFramer,
   SiPrisma,
   SiPostgresql,
+  SiSocketdotio,
 } from "react-icons/si";
 
 const projects: Project[] = [
@@ -60,13 +61,13 @@ const projects: Project[] = [
     isWorking: true,
   },
   {
-    title: "Anilog",
+    title: "AniLog",
     description:
-      "An anime tracking application that allows users to track, rate, and review their favorite anime series.",
+      "A cozy, modern web app for tracking anime, manga, and manhwa collections with rich media management and responsive UI.",
     image: "/anilog.png",
-    link: "",
-    github: "https://anilog-chi.vercel.app/",
-    slug: "task-manager",
+    link: "https://anilog-chi.vercel.app",
+    github: "https://github.com/Pranab-kr/anilog",
+    slug: "anilog",
     technologies: [
       {
         name: "Next.js",
@@ -81,31 +82,36 @@ const projects: Project[] = [
         icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
       },
       {
-        name: "Framer Motion",
-        icon: <SiFramer className="size-full text-[#0055FF]" />,
+        name: "PostgreSQL",
+        icon: <SiPostgresql className="size-full text-[#4169E1]" />,
       },
     ],
     isWorking: true,
   },
   {
-    title: "Social Dashboard",
+    title: "Chatty",
     description:
-      "A responsive social media dashboard with analytics, post scheduling, and engagement tracking features.",
-    image: "/keyBoard.png",
-    link: "#",
-    slug: "social-dashboard",
+      "A modern real-time chat application with rich UI, theming, and analytics, built on React 19 and Zustand with Socket.io-powered messaging.",
+    image: "/chat-app.png",
+    link: "https://chat-app-uunl.onrender.com",
+    github: "https://github.com/Pranab-kr/chat-App",
+    slug: "chat-app",
     technologies: [
       { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
       {
-        name: "TypeScript",
-        icon: <SiTypescript className="size-full text-[#3178C6]" />,
+        name: "Socket.io",
+        icon: <SiSocketdotio className="text-foreground size-full" />,
       },
       {
-        name: "Node.js",
-        icon: <SiNodedotjs className="size-full text-[#339933]" />,
+        name: "MongoDB",
+        icon: <SiMongodb className="size-full text-[#47A248]" />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
       },
     ],
-    isWorking: false,
+    isWorking: true,
   },
   {
     title: "Portfolio Template",
@@ -130,56 +136,6 @@ const projects: Project[] = [
       },
     ],
     isWorking: true,
-  },
-  {
-    title: "Blog Platform",
-    description:
-      "A full-stack blog platform with markdown support, SEO optimization, and a powerful admin dashboard.",
-    image: "/keyBoard.png",
-    link: "#",
-    github: "https://github.com",
-    technologies: [
-      {
-        name: "Next.js",
-        icon: <SiNextdotjs className="text-foreground size-full" />,
-      },
-      {
-        name: "Prisma",
-        icon: <SiPrisma className="text-foreground size-full" />,
-      },
-      {
-        name: "PostgreSQL",
-        icon: <SiPostgresql className="size-full text-[#4169E1]" />,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: <SiTailwindcss className="size-full text-[#06B6D4]" />,
-      },
-    ],
-    isWorking: true,
-  },
-  {
-    title: "Chat Application",
-    description:
-      "Real-time chat application with end-to-end encryption, file sharing, and video call capabilities.",
-    image: "/keyBoard.png",
-    link: "#",
-    technologies: [
-      { name: "React", icon: <SiReact className="size-full text-[#61DAFB]" /> },
-      {
-        name: "Node.js",
-        icon: <SiNodedotjs className="size-full text-[#339933]" />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb className="size-full text-[#47A248]" />,
-      },
-      {
-        name: "TypeScript",
-        icon: <SiTypescript className="size-full text-[#3178C6]" />,
-      },
-    ],
-    isWorking: false,
   },
 ];
 

@@ -98,7 +98,7 @@ const Hero = () => {
           className="h-auto px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm"
           asChild
         >
-          <Link href="/resume.pdf" target="_blank">
+          <Link href="/resume.pdf" download="Pranab_Resume.pdf">
             <LuFileText className="size-3.5 sm:size-4" />
             Resume / CV
           </Link>
