@@ -43,7 +43,10 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6">
+    <div
+      className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6"
+      id="About"
+    >
       {/* Section Header */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}

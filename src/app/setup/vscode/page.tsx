@@ -187,48 +187,54 @@ export default function VSCodePage() {
                     )}
                   </button>
                 </div>
-                <div className="max-h-96 overflow-auto">
-                  <pre className="min-w-full p-3 text-xs md:p-4">
-                    <code className="text-muted-foreground block font-mono leading-relaxed whitespace-pre">
-                      {settingsJson.split("\n").map((line, index) => {
-                        const trimmedLine = line.trim();
-                        if (trimmedLine.startsWith("//")) {
-                          return (
-                            <div
-                              key={index}
-                              className="text-muted-foreground/60 italic"
-                            >
-                              {line}
-                            </div>
-                          );
-                        } else if (
-                          trimmedLine.includes(":") &&
-                          trimmedLine.includes('"')
-                        ) {
-                          const colonIndex = line.indexOf(":");
-                          const key = line.substring(0, colonIndex);
-                          const value = line.substring(colonIndex + 1);
-                          return (
-                            <div key={index}>
-                              <span className="text-foreground font-medium">
-                                {key}
-                              </span>
-                              <span className="text-muted-foreground">:</span>
-                              <span className="text-muted-foreground">
-                                {value}
-                              </span>
-                            </div>
-                          );
-                        } else {
-                          return (
-                            <div key={index} className="text-muted-foreground">
-                              {line}
-                            </div>
-                          );
-                        }
-                      })}
-                    </code>
-                  </pre>
+                <div className="relative">
+                  <div className="max-h-96 overflow-auto" data-lenis-prevent>
+                    <pre className="min-w-full p-3 text-xs md:p-4">
+                      <code className="text-muted-foreground block font-mono leading-relaxed whitespace-pre">
+                        {settingsJson.split("\n").map((line, index) => {
+                          const trimmedLine = line.trim();
+                          if (trimmedLine.startsWith("//")) {
+                            return (
+                              <div
+                                key={index}
+                                className="text-muted-foreground/60 italic"
+                              >
+                                {line}
+                              </div>
+                            );
+                          } else if (
+                            trimmedLine.includes(":") &&
+                            trimmedLine.includes('"')
+                          ) {
+                            const colonIndex = line.indexOf(":");
+                            const key = line.substring(0, colonIndex);
+                            const value = line.substring(colonIndex + 1);
+                            return (
+                              <div key={index}>
+                                <span className="text-foreground font-medium">
+                                  {key}
+                                </span>
+                                <span className="text-muted-foreground">:</span>
+                                <span className="text-muted-foreground">
+                                  {value}
+                                </span>
+                              </div>
+                            );
+                          } else {
+                            return (
+                              <div
+                                key={index}
+                                className="text-muted-foreground"
+                              >
+                                {line}
+                              </div>
+                            );
+                          }
+                        })}
+                      </code>
+                    </pre>
+                  </div>
+                  <div className="from-background/100 pointer-events-none absolute right-0 bottom-0 left-0 h-16 bg-gradient-to-t to-transparent" />
                 </div>
               </div>
             </div>

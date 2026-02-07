@@ -223,7 +223,7 @@ export default function TerminalPage() {
                     )}
                   </button>
                 </div>
-                <div className="max-h-72 overflow-auto">
+                <div className="max-h-72 overflow-auto" data-lenis-prevent>
                   <pre className="min-w-full p-3 text-xs md:p-4">
                     <code className="text-muted-foreground block font-mono leading-relaxed whitespace-pre">
                       {zshrcConfig.split("\n").map((line, index) => {

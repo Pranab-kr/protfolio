@@ -25,37 +25,47 @@ status: "active"
 featured: true
 isPublished: true
 ---
-# AniLog – Anime, Manga & Manhwa Tracker
-## Overview
-**AniLog** is a minimalist, cozy media tracker for anime, manga, and manhwa.
----
+
 ## Key Features
+
 ### Auth & Onboarding
+
 - Email/password authentication via Better Auth
 - Session-based access to the main dashboard
 - Protected home page that redirects unauthenticated users to `login`
+
 ### Media Library
+
 - Central dashboard (`MediaTabs`) for browsing and filtering media
 - Media cards with title, type, status, and progress
 - Distinct support for anime, manga, and manhwa entries
 - Quick actions for editing entries in place
+
 ### Media Management
+
 - Add new media via modal forms (e.g. `AddEntryModal`)
 - Edit existing entries with an inline modal (`EditMediaModal`)
 - Validation using Zod-based schemas for creating and updating entries
 - Status and progress fields for tracking where you left off
+
 ### File & Image Handling
+
 - Image upload support using UploadThing
 - Drag-and-drop powered uploader (`ImageUploader`)
 - Preview and replacement of cover art
 - Integration with a custom `file-upload` UI component
+
 ### User Experience
+
 - Dark / light mode with a dedicated `ThemeToggle` and `ThemeProvider`
 - Responsive layout with sticky header and backdrop blur
 - Mobile-aware layout using `use-mobile` hook and a floating dock navigation
 - Shadcn-based UI primitives for consistent look-and-feel
+
 ---
+
 ## Tech Stack
+
 - **Framework**: Next.js 16 (App Router), React 19
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
@@ -67,8 +77,11 @@ isPublished: true
 - **Uploads**: UploadThing for media image handling
 - **Charts / Visualization**: Recharts-backed `chart` UI wrapper
 - **Utilities**: SWR for data fetching, date-fns, clsx/cva for styling
+
 ---
+
 ## How It Works
+
 1. User signs up or logs in through the auth forms.
 2. Authenticated users are redirected to the main AniLog dashboard.
 3. The dashboard loads user-specific media data from the Postgres database via Drizzle.
@@ -77,9 +90,13 @@ isPublished: true
    - Upload or change cover images using UploadThing.
    - Edit status, progress, and other metadata.
 5. Changes are persisted to the database and reflected in the `MediaTabs` and `MediaList` views, with charts and summaries powered via Recharts where needed.
+
 ---
+
 ## Current Status
+
 **Completed**
+
 - Authentication and session handling
 - Protected main dashboard (`app/page.tsx`) with header and theme toggle
 - Core media components:
@@ -90,18 +107,23 @@ isPublished: true
 - Upload pipeline for media images
 - Core schema and migrations for media and auth (`schema/`, `drizzle/`)
 - Theming and reusable UI primitives
-**Planned**
+  **Planned**
 - More advanced filtering and search across large libraries
 - Rich statistics and charts for watch/read history
 - Social features (sharing lists, activity feed)
 - Public profile pages and sharable lists
 - Advanced sorting and custom tags/collections
+
 ---
+
 ## Highlights
+
 - Uses modern **Next.js 16 + React 19** features with a typed, modular architecture.
 - Strong **TypeScript** types across schemas, store, and components.
 - **Drizzle ORM** and Neon provide a clean and safe database layer.
 - Uploads and image handling are abstracted behind a simple UI and action layer.
 - The design emphasizes a cozy, focused experience for tracking anime, manga, and manhwa without clutter.
+
 ---
+
 **AniLog demonstrates a modern, full-stack media tracking app with a strong focus on DX, type safety, and a polished, cozy user experience.**

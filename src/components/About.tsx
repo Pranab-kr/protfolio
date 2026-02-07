@@ -5,10 +5,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div
-      id="About"
-      className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6"
-    >
+    <div className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6">
       <motion.h2
         initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
         whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}

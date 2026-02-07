@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 import { LuFileText, LuSend } from "react-icons/lu";
 import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
   SiPostgresql,
-  SiBun,
 } from "react-icons/si";
 import {
   Tooltip,
@@ -29,7 +29,15 @@ const techBadges = [
   },
   {
     name: "Bun",
-    icon: <SiBun className="size-3.5 text-[#12110f] dark:text-[#fbf0df]" />,
+    icon: (
+      <Image
+        src="/Bun.svg"
+        alt="Bun"
+        width={14}
+        height={14}
+        className="size-3.5"
+      />
+    ),
   },
   {
     name: "PostgreSQL",

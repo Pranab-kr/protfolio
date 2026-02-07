@@ -311,31 +311,6 @@ export const settingsJson = `{
   "window.menuBarVisibility": "compact",
   "git.openRepositoryInParentFolders": "always",
 
-  //colors extra
-  //   "editor.tokenColorCustomizations": {
-  //   "textMateRules": [
-  //     {
-  //       "scope": "comment",
-  //       "settings": { "foreground": "#7C7396", "fontStyle": "italic" }
-  //     },
-  //     {
-  //       "scope": "keyword",
-  //       "settings": { "foreground": "#f65bb3" }
-  //     },
-  //     {
-  //       "scope": "string",
-  //       "settings": { "foreground": "#F1FA8C" }
-  //     },
-  //     {
-  //       "scope": "entity.name.function",
-  //       "settings": { "foreground": "#32ca65" }
-  //     },
-  //     {
-  //       "scope": "variable",
-  //       "settings": { "foreground": "#d1c7f9" }
-  //     }
-  //   ]
-  // }
   "vim.handleKeys": {
     "<C-p>": false,
     "<C-w>": false,

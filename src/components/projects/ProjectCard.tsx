@@ -40,7 +40,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="group border-border bg-card hover:shadow-minimal h-full w-full overflow-hidden p-0 shadow-none transition-all">
       <CardHeader className="p-0">
-        <div className="relative aspect-video overflow-hidden">
+        <Link
+          href={project.link}
+          target="_blank"
+          className="relative block aspect-video overflow-hidden"
+        >
           <Image
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             src={project.image}
@@ -48,7 +52,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             width={1920}
             height={1080}
           />
-        </div>
+        </Link>
       </CardHeader>
 
       <CardContent className="px-3 pt-3 sm:px-4 sm:pt-4 md:px-6">
@@ -76,7 +80,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </Tooltip>
               </TooltipProvider>
               {project.github && (
-                <TooltipProvider>
+                <TooltipProvider delayDuration={100}>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Link
@@ -107,7 +111,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               Technologies
             </h4>
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <TooltipProvider>
+              <TooltipProvider delayDuration={100}>
                 {project.technologies.map((technology, index) => (
                   <Tooltip key={index}>
                     <TooltipTrigger asChild>
