@@ -7,12 +7,14 @@ import { useState } from "react";
 import ThemeToggleBtn from "./ui/ThemeToggleBtn";
 import HamburgerMenu from "./HamburgerMenu";
 import MobileSidebar from "./MobileSidebar";
+import { useLenis } from "./LenisProvider";
 
 const Navbar = () => {
   const [hoverred, setHovered] = useState<number | null>(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const lenis = useLenis();
 
   const navItems = [
     { title: "About", href: "#About" },
@@ -29,12 +31,16 @@ const Navbar = () => {
       const targetId = href.substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        const navbarHeight = 100; // Approximate navbar height with margin
-        const targetPosition = targetElement.offsetTop - navbarHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
+        if (lenis) {
+          lenis.scrollTo(targetElement, { offset: -100 });
+        } else {
+          const navbarHeight = 100;
+          const targetPosition = targetElement.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+        }
       }
     }
   };

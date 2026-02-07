@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import GlobalFooter from "@/components/GlobalFooter";
+import LenisProvider from "@/components/LenisProvider";
 
 const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"] });
 export const metadata: Metadata = {
@@ -52,10 +53,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster position="top-center" />
-          <Navbar />
-          <main>{children}</main>
-          <GlobalFooter />
+          <LenisProvider>
+            <Toaster position="top-center" />
+            <Navbar />
+            <main>{children}</main>
+            <GlobalFooter />
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>
