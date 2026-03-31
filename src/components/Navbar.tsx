@@ -4,15 +4,13 @@ import Link from "next/link";
 import { Container } from "./container";
 import Image from "next/image";
 import { useState } from "react";
-import HamburgerMenu from "./HamburgerMenu";
-import MobileSidebar from "./MobileSidebar";
+import MobileDock from "./MobileDock";
 import { useLenis } from "./LenisProvider";
 
 const Navbar = () => {
   const [hoverred, setHovered] = useState<number | null>(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const lenis = useLenis();
 
   const navItems = [
@@ -107,22 +105,12 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
-
-            <HamburgerMenu
-              isOpen={mobileMenuOpen}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            />
           </motion.nav>
         </Container>
       </div>
 
-      {/* Mobile Sidebar */}
-      <MobileSidebar
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-        navItems={navItems}
-        onNavClick={handleNavClick}
-      />
+      {/* Mobile Dock */}
+      <MobileDock onNavClick={handleNavClick} />
     </>
   );
 };

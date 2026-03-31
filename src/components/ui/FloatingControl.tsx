@@ -45,10 +45,10 @@ export default function FloatingControl() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.5, duration: 0.4 }}
-      className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center justify-center gap-1 rounded-full border border-neutral-300 bg-neutral-100 px-1.5 py-1 shadow-sm sm:absolute sm:top-1/2 sm:right-4 sm:bottom-auto sm:left-auto sm:-translate-x-0 sm:-translate-y-1/2 md:right-8 dark:border-neutral-800 dark:bg-neutral-900"
+      className="absolute top-1/2 right-4 z-1 hidden -translate-y-1/2 items-center justify-center gap-1 rounded-full border border-neutral-300 bg-neutral-100 px-1.5 py-1 shadow-sm sm:flex md:right-8 dark:border-neutral-800 dark:bg-neutral-900"
     >
       {/* Audio Button */}
       <button
