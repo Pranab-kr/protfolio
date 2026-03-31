@@ -22,7 +22,7 @@ const Footer = () => {
       {/* Footer Text */}
       <div className="flex flex-col items-center justify-center">
         <p className="text-secondary text-center text-xs sm:text-sm">
-          Design & Developed by <b>Pranab kr</b> <br /> &copy;{" "}
+          Design & Developed by <b className="font-editorial">Pranab kr</b> <br /> &copy;{" "}
           {new Date().getFullYear()}. All rights reserved.
         </p>
       </div>

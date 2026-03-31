@@ -173,7 +173,7 @@ const ProjectsPage = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-6 text-center sm:mb-8"
         >
-          <h1 className="text-foreground mb-3 text-2xl font-bold sm:mb-4 sm:text-4xl md:text-5xl">
+          <h1 className="font-editorial text-foreground mb-3 text-2xl font-bold sm:mb-4 sm:text-4xl md:text-5xl">
             Projects
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg">

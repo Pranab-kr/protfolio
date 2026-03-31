@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -8,6 +9,12 @@ import GlobalFooter from "@/components/GlobalFooter";
 import LenisProvider from "@/components/LenisProvider";
 
 const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"] });
+
+const ppEditorial = localFont({
+  src: "../../public/fonts/PPEditorial.otf",
+  variable: "--font-editorial",
+  display: "swap",
+});
 export const metadata: Metadata = {
   metadataBase: new URL("https://pranab.dev"),
   title: {
@@ -45,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-background text-foreground antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-white)]/10`}
+        className={`${inter.className} ${ppEditorial.variable} bg-background text-foreground antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-white)]/10`}
       >
         <ThemeProvider
           attribute="class"

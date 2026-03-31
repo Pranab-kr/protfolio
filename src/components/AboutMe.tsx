@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { GitHubCalendar } from "react-github-calendar";
+import "react-github-calendar/tooltips.css";
 import { useTheme } from "next-themes";
 import {
   SiReact,
@@ -38,8 +39,8 @@ const AboutMe = () => {
 
   // Custom theme for the GitHub calendar
   const calendarTheme = {
-    light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
-    dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+    light: ["#ebedf0", "#c6c6c6", "#9e9e9e", "#696969", "#333333"],
+    dark: ["#161b22", "#3b3b3b", "#6b6b6b", "#9e9e9e", "#ffffff"],
   };
 
   return (
@@ -89,7 +90,7 @@ const AboutMe = () => {
         {/* Info */}
         <div className="flex-1 space-y-3 sm:space-y-4">
           <div>
-            <h3 className="text-foreground text-lg font-semibold sm:text-xl">
+            <h3 className="font-editorial text-foreground text-lg font-semibold sm:text-xl">
               Pranab Kumar
             </h3>
             <p className="text-muted-foreground mt-1.5 text-xs leading-relaxed sm:mt-2 sm:text-sm">
@@ -149,6 +150,13 @@ const AboutMe = () => {
             fontSize={10}
             theme={calendarTheme}
             colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+            tooltips={{
+              activity: {
+                text: (activity: { date: string; count: number }) => {
+                  return `${activity.count} contribution${activity.count !== 1 ? "s" : ""} on ${activity.date}`;
+                },
+              },
+            }}
           />
         </div>
       </motion.div>

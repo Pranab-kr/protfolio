@@ -172,7 +172,7 @@ const Projects = () => {
       {/* Section Heading */}
       <div className="mb-6 sm:mb-8">
         <p className="text-secondary text-xs sm:text-sm">Featured</p>
-        <h2 className="text-foreground text-xl font-bold sm:text-2xl">
+        <h2 className="font-editorial text-foreground text-xl font-bold sm:text-2xl">
           Projects
         </h2>
       </div>
