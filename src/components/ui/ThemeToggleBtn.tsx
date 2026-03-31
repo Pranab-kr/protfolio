@@ -19,14 +19,14 @@ const ThemeToggleBtn = () => {
 
   if (!mounted) {
     return (
-      <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-transparent" />
+      <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-transparent" />
     );
   }
 
   return (
     <motion.button
       onClick={toggleTheme}
-      className="text-muted-foreground hover:bg-muted dark:bg-card/80 dark:text-muted-foreground dark:hover:bg-accent/80 relative flex h-8 w-8 items-center justify-center rounded-full bg-transparent transition-colors"
+      className="relative flex h-6 w-6 items-center justify-center rounded-full bg-transparent text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"

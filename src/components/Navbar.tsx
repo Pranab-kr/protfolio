@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Container } from "./container";
 import Image from "next/image";
 import { useState } from "react";
-import ThemeToggleBtn from "./ui/ThemeToggleBtn";
 import HamburgerMenu from "./HamburgerMenu";
 import MobileSidebar from "./MobileSidebar";
 import { useLenis } from "./LenisProvider";
@@ -107,8 +106,6 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
-
-              <ThemeToggleBtn />
             </div>
 
             <HamburgerMenu

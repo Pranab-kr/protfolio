@@ -16,6 +16,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Button } from "./ui/button";
+import FloatingControl from "./ui/FloatingControl";
 
 const techBadges = [
   {
@@ -47,7 +48,9 @@ const techBadges = [
 
 const Hero = () => {
   return (
-    <div className="px-2 pb-6 sm:px-4 sm:pb-8 md:px-6">
+    <div className="relative px-2 pb-6 sm:px-4 sm:pb-8 md:px-6">
+      {/* Floating Audio & Theme Control */}
+      <FloatingControl />
       {/* Main Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 10 }}

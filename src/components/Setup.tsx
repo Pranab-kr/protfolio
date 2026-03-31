@@ -45,7 +45,7 @@ const Setup = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
         viewport={{ once: true }}
-        className="font-editorial text-foreground text-xl font-bold tracking-tight sm:text-2xl md:text-3xl"
+        className="font-editorial text-foreground pt-2 text-xl font-bold tracking-tight sm:text-2xl md:text-3xl"
       >
         Setup
       </motion.h2>
