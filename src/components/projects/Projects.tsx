@@ -158,14 +158,28 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, filter: "blur(10px)", y: 20 },
+    show: {
+      opacity: 1,
+      filter: "blur(0px)",
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" as const },
+    },
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{
-        duration: 0.5,
-        ease: "easeOut",
-      }}
+    <div
       className="border-border border-y px-2 py-6 sm:px-4 sm:py-8 md:px-6"
       id="Projects-Section"
     >
@@ -178,31 +192,19 @@ const Projects = () => {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6">
+      <motion.div
+        className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-50px" }}
+      >
         {projects.map((project, idx) => (
-          <motion.div
-            key={project.title + idx}
-            initial={{
-              opacity: 0,
-              filter: "blur(10px)",
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              filter: "blur(0px)",
-              y: 0,
-            }}
-            transition={{
-              duration: 0.3,
-              delay: idx * 0.1,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }}
-          >
+          <motion.div key={project.title + idx} variants={itemVariants}>
             <ProjectCard project={project} />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Show All Button */}
       <div className="mt-6 flex justify-center sm:mt-8">
@@ -215,7 +217,7 @@ const Projects = () => {
           <Link href="/projects">Show all projects</Link>
         </Button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

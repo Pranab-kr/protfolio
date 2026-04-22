@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
 import { LuFileText, LuSend } from "react-icons/lu";
@@ -52,22 +51,12 @@ const Hero = () => {
       {/* Floating Audio & Theme Control */}
       <FloatingControl />
       {/* Main Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.1 }}
-        className="text-foreground pt-8 text-xl font-bold tracking-tight sm:pt-10 sm:text-2xl md:pt-12 md:text-4xl"
-      >
+      <h1 className="text-foreground pt-8 text-xl font-bold tracking-tight sm:pt-10 sm:text-2xl md:pt-12 md:text-4xl">
         Hi, I&apos;m Pranab 👋
-      </motion.h1>
+      </h1>
 
       {/* Description with tech badges */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
-        className="text-muted-foreground mt-3 max-w-2xl text-xs leading-relaxed sm:mt-4 sm:text-sm md:text-base"
-      >
+      <div className="text-muted-foreground mt-3 max-w-2xl text-xs leading-relaxed sm:mt-4 sm:text-sm md:text-base">
         <p className="flex flex-wrap items-center gap-1 sm:gap-1.5">
           <span>I build interactive web apps using</span>
           <TooltipProvider delayDuration={100}>
@@ -94,15 +83,10 @@ const Hero = () => {
           </TooltipProvider>
           <span>.</span>
         </p>
-      </motion.div>
+      </div>
 
       {/* Action Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.3 }}
-        className="mt-4 flex flex-wrap gap-2 sm:mt-6 sm:gap-3"
-      >
+      <div className="mt-4 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
         <Button
           variant="outline"
           size="sm"
@@ -126,7 +110,7 @@ const Hero = () => {
             Get in touch
           </Link>
         </Button>
-      </motion.div>
+      </div>
     </div>
   );
 };

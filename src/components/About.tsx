@@ -1,28 +1,14 @@
-"use client";
 import React from "react";
-import { motion } from "motion/react";
 import Image from "next/image";
 
 const About = () => {
   return (
     <div className="border-border border-t px-2 pt-6 pb-8 sm:px-4 sm:pt-8 sm:pb-10 md:px-6">
-      <motion.h2
-        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        transition={{ duration: 0.3, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="text-primary text-lg font-bold tracking-tight sm:text-xl md:text-2xl"
-      >
+      <h2 className="text-primary text-lg font-bold tracking-tight sm:text-xl md:text-2xl">
         Education
-      </motion.h2>
+      </h2>
 
-      <motion.div
-        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-        transition={{ duration: 0.3, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="flex flex-col gap-3 pt-3 sm:flex-row sm:items-start sm:gap-4 sm:pt-4"
-      >
+      <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:items-start sm:gap-4 sm:pt-4">
         <Image
           src="/hit.png"
           alt="Haldia Institute of Technology Logo"
@@ -45,7 +31,7 @@ const About = () => {
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
