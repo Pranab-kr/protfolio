@@ -51,7 +51,7 @@ const Hero = () => {
       {/* Floating Audio & Theme Control */}
       <FloatingControl />
       {/* Main Heading */}
-      <h1 className="text-foreground pt-8 text-xl font-bold tracking-tight sm:pt-10 sm:text-2xl md:pt-12 md:text-4xl">
+      <h1 className="text-foreground pt-8 text-3xl font-bold tracking-tight sm:pt-10 sm:text-2xl md:pt-12 md:text-4xl">
         Hi, I&apos;m Pranab 👋
       </h1>
 

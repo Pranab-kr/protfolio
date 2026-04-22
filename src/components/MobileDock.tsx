@@ -4,13 +4,19 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { Dock, DockIcon } from "./ui/dock";
-import { LuVolume2, LuVolumeX, LuVolume1, LuSun, LuMoon } from "react-icons/lu";
-import { FiUser, FiFolder, FiMail, FiHome } from "react-icons/fi";
+import {
+  LuSun,
+  LuMoon,
+  LuHouse,
+  LuVolumeX,
+  LuVolume1,
+  LuVolume2,
+} from "react-icons/lu";
+import { FiBriefcase, FiMail } from "react-icons/fi";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { useTheme } from "next-themes";
 
-// Add your songs here
 const SONGS = ["/songs/song1.mp3", "/songs/song2.mp3"];
-
 const getRandomSong = () => SONGS[Math.floor(Math.random() * SONGS.length)];
 
 interface MobileDockProps {
@@ -57,9 +63,18 @@ const MobileDock = ({ onNavClick }: MobileDockProps) => {
   };
 
   const navItems = [
-    { title: "Home", href: "/", icon: FiHome },
-    { title: "About", href: "#About", icon: FiUser },
-    { title: "Projects", href: "/projects", icon: FiFolder },
+    { title: "Home", href: "/", icon: LuHouse },
+    { title: "Projects", href: "/projects", icon: FiBriefcase },
+  ];
+
+  const socialItems = [
+    { title: "GitHub", href: "https://github.com/Pranab-kr", icon: SiGithub },
+    {
+      title: "LinkedIn",
+      href: "https://linkedin.com/in/pranab-kr",
+      icon: SiLinkedin,
+    },
+    { title: "X", href: "https://x.com/pranab_kr", icon: SiX },
     { title: "Contact", href: "/contact", icon: FiMail },
   ];
 
@@ -69,7 +84,7 @@ const MobileDock = ({ onNavClick }: MobileDockProps) => {
         iconSize={36}
         iconMagnification={50}
         iconDistance={100}
-        className="dark:bg-card h-14 gap-1 rounded-4xl border border-neutral-200 bg-neutral-50 px-2 dark:border-neutral-800"
+        className="dark:bg-card bg-card h-14 gap-1 rounded-4xl border border-neutral-200 px-2 dark:border-neutral-800"
       >
         {/* Navigation Items */}
         {navItems.map((item) => (
@@ -77,6 +92,25 @@ const MobileDock = ({ onNavClick }: MobileDockProps) => {
             <Link
               href={item.href}
               onClick={(e) => onNavClick(e, item.href)}
+              className="flex h-full w-full items-center justify-center text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+            >
+              <item.icon className="h-5 w-5" />
+            </Link>
+          </DockIcon>
+        ))}
+
+        {/* Separator */}
+        <div className="mx-1 h-8 w-px bg-neutral-300 dark:bg-neutral-700" />
+
+        {/* Social Items */}
+        {socialItems.map((item) => (
+          <DockIcon key={item.title} className="rounded-full">
+            <Link
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              onClick={(e) =>
+                !item.href.startsWith("http") && onNavClick(e, item.href)
+              }
               className="flex h-full w-full items-center justify-center text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
             >
               <item.icon className="h-5 w-5" />

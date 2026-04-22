@@ -6,7 +6,7 @@ import ThemeToggleBtn from "./ThemeToggleBtn";
 import { LuVolume2, LuVolumeX, LuVolume1 } from "react-icons/lu";
 
 // Add your songs here
-const SONGS = ["/songs/song1.mp3", "/songs/song2.mp3"];
+const SONGS = ["/songs/song1.mp3", "/songs/song2.mp3", "/songs/song3.mp3"];
 
 const getRandomSong = () => SONGS[Math.floor(Math.random() * SONGS.length)];
 
@@ -48,7 +48,7 @@ export default function FloatingControl() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.5, duration: 0.4 }}
-      className="absolute top-1/2 right-4 z-1 hidden -translate-y-1/2 items-center justify-center gap-1 rounded-full border border-neutral-300 bg-neutral-100 px-1.5 py-1 shadow-sm sm:flex md:right-8 dark:border-neutral-800 dark:bg-neutral-900"
+      className="bg-card absolute top-1/2 right-4 z-1 hidden -translate-y-1/2 items-center justify-center gap-1 rounded-full border border-neutral-300 px-1.5 py-1 shadow-sm sm:flex md:right-8 dark:border-neutral-800 dark:bg-neutral-900"
     >
       {/* Audio Button */}
       <button

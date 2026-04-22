@@ -63,7 +63,7 @@ export const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="m-auto flex w-full max-w-lg flex-col justify-center gap-3 px-2 py-8 sm:gap-4 sm:px-4 sm:py-16 md:px-0"
+      className="flex w-full max-w-xl flex-col justify-center gap-3 px-2 py-8 sm:gap-4 sm:px-4 sm:py-12 md:px-6"
     >
       <div className="flex flex-col gap-1.5 sm:gap-2">
         <label
