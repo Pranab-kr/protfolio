@@ -76,7 +76,7 @@ const Navbar = () => {
             <Link href="/" className="cursor-pointer">
               <Image
                 className="h-8 w-8 rounded-full transition-transform hover:scale-105 sm:h-10 sm:w-10"
-                src="/samurai.png"
+                src="/shanks.webp"
                 height={100}
                 width={100}
                 alt="logo"

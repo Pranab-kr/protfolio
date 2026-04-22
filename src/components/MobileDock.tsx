@@ -69,7 +69,7 @@ const MobileDock = ({ onNavClick }: MobileDockProps) => {
         iconSize={36}
         iconMagnification={50}
         iconDistance={100}
-        className="dark:bg-card h-14 gap-1 rounded-2xl border border-neutral-300 bg-neutral-100/90 px-2 backdrop-blur-md dark:border-neutral-800"
+        className="dark:bg-card h-14 gap-1 rounded-2xl border border-neutral-300 bg-neutral-100 px-2 backdrop-blur-md dark:border-neutral-800"
       >
         {/* Navigation Items */}
         {navItems.map((item) => (

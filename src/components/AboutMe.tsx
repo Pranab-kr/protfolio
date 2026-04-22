@@ -79,7 +79,7 @@ const AboutMe = () => {
         {/* Avatar */}
         <div className="shrink-0">
           <Image
-            src="/samurai.png"
+            src="/shanks.webp"
             alt="Profile"
             width={120}
             height={120}
@@ -142,7 +142,7 @@ const AboutMe = () => {
         </h3>
 
         {/* GitHub Calendar - Hidden Scrollbar and Slider */}
-        <div className="border-border bg-card mt-3 overflow-x-auto rounded-lg border p-3 sm:mt-4 sm:p-4 md:p-8 [&_.react-activity-calendar__scroll-container]:overflow-visible [&_input[type='range']]:hidden">
+        <div className="border-border bg-card mt-3 overflow-x-auto rounded-lg border p-3 sm:mt-4 sm:p-4 md:p-6 [&_.react-activity-calendar__scroll-container]:overflow-visible [&_input[type='range']]:hidden">
           <GitHubCalendar
             username="Pranab-kr"
             blockSize={10}
