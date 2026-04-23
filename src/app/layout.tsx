@@ -65,6 +65,8 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
             <GlobalFooter />
+            {/* Soft blur mask at the bottom */}
+            <div className="bg-background/50 pointer-events-none fixed bottom-0 left-0 z-50 h-24 w-full [mask-image:linear-gradient(to_top,white,transparent)] backdrop-blur-md" />
           </LenisProvider>
         </ThemeProvider>
       </body>

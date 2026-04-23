@@ -8,19 +8,35 @@ import { LuVolume2, LuVolumeX, LuVolume1 } from "react-icons/lu";
 // Add your songs here
 const SONGS = ["/songs/song1.mp3", "/songs/song2.mp3", "/songs/song3.mp3"];
 
-const getRandomSong = () => SONGS[Math.floor(Math.random() * SONGS.length)];
-
 export default function FloatingControl() {
   // audioState: 0 = paused, 1 = low vol, 2 = high vol
   const [audioState, setAudioState] = useState<0 | 1 | 2>(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const songIndexRef = useRef(0);
 
   useEffect(() => {
-    const randomSong = getRandomSong();
-    audioRef.current = new Audio(randomSong);
-    audioRef.current.loop = true;
+    if (SONGS.length === 0) return;
+
+    const randomIndex = Math.floor(Math.random() * SONGS.length);
+    songIndexRef.current = randomIndex;
+    const audio = new Audio(SONGS[randomIndex]);
+    audio.loop = false;
+
+    const handleSongEnd = () => {
+      const nextIndex = songIndexRef.current + 1;
+      songIndexRef.current =
+        nextIndex < SONGS.length && SONGS[nextIndex] ? nextIndex : 0;
+      audio.src = SONGS[songIndexRef.current] || SONGS[0];
+      audio.currentTime = 0;
+      audio.play().catch(() => console.log("Audio play blocked"));
+    };
+
+    audio.addEventListener("ended", handleSongEnd);
+    audioRef.current = audio;
+
     return () => {
-      audioRef.current?.pause();
+      audio.removeEventListener("ended", handleSongEnd);
+      audio.pause();
     };
   }, []);
 

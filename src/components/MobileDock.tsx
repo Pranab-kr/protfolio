@@ -74,12 +74,12 @@ const MobileDock = ({ onNavClick }: MobileDockProps) => {
       href: "https://linkedin.com/in/pranab-kr",
       icon: SiLinkedin,
     },
-    { title: "X", href: "https://x.com/pranab_kr", icon: SiX },
+    // { title: "X", href: "https://x.com/pranab_kr", icon: SiX },
     { title: "Contact", href: "/contact", icon: FiMail },
   ];
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 sm:hidden">
+    <div className="fixed bottom-4 left-1/2 z-500 -translate-x-1/2 sm:hidden">
       <Dock
         iconSize={36}
         iconMagnification={50}

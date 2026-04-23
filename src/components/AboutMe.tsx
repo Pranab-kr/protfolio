@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { GitHubCalendar } from "react-github-calendar";
@@ -36,6 +36,11 @@ const skills = [
 
 const AboutMe = () => {
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Custom theme for the GitHub calendar
   const calendarTheme = {
@@ -143,21 +148,25 @@ const AboutMe = () => {
 
         {/* GitHub Calendar - Hidden Scrollbar and Slider */}
         <div className="border-border bg-card mt-3 overflow-x-auto rounded-lg border p-3 sm:mt-4 sm:p-4 md:p-6 [&_.react-activity-calendar__scroll-container]:overflow-visible [&_input[type='range']]:hidden">
-          <GitHubCalendar
-            username="Pranab-kr"
-            blockSize={10}
-            blockMargin={3}
-            fontSize={10}
-            theme={calendarTheme}
-            colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
-            tooltips={{
-              activity: {
-                text: (activity: { date: string; count: number }) => {
-                  return `${activity.count} contribution${activity.count !== 1 ? "s" : ""} on ${activity.date}`;
+          {mounted ? (
+            <GitHubCalendar
+              username="Pranab-kr"
+              blockSize={10}
+              blockMargin={3}
+              fontSize={10}
+              theme={calendarTheme}
+              colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+              tooltips={{
+                activity: {
+                  text: (activity: { date: string; count: number }) => {
+                    return `${activity.count} contribution${activity.count !== 1 ? "s" : ""} on ${activity.date}`;
+                  },
                 },
-              },
-            }}
-          />
+              }}
+            />
+          ) : (
+            <div className="bg-muted h-[120px] w-full animate-pulse rounded-md" />
+          )}
         </div>
       </motion.div>
     </div>
