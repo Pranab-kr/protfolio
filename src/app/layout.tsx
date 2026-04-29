@@ -16,7 +16,7 @@ const ppEditorial = localFont({
   display: "swap",
 });
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pranab.dev"),
+  metadataBase: new URL("https://pranab.in"),
   title: {
     default: "Pranab Kumar | Full Stack Web Developer",
     template: "%s | Pranab Kumar",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Pranab Kumar | Full Stack Web Developer",
     description:
       "Full Stack Web Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
-    url: "https://pranab.dev",
+    url: "https://pranab.in",
     siteName: "Pranab Kumar",
     locale: "en_US",
     type: "website",
@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  other: {
+    "darkreader-lock": "true",
   },
 };
 
