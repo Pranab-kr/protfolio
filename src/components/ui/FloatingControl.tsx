@@ -6,7 +6,7 @@ import ThemeToggleBtn from "./ThemeToggleBtn";
 import { LuVolume2, LuVolumeX, LuVolume1 } from "react-icons/lu";
 
 // Add your songs here
-const SONGS = ["/songs/song1.mp3", "/songs/song2.mp3", "/songs/song3.mp3"];
+const SONGS = ["/songs/song1.mp3", "/songs/song2.mp3", "/songs/song3.mp3", "/songs/song4.mp3"];
 
 export default function FloatingControl() {
   // audioState: 0 = paused, 1 = low vol, 2 = high vol
