@@ -128,6 +128,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    @apply bg-neutral-200 text-neutral-900;
+  }
+
+  .dark ::selection {
+    @apply bg-neutral-800 text-neutral-200;
+  }
   body {
     @apply bg-background text-foreground;
   }
